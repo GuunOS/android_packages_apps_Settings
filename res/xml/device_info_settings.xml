@@ -94,7 +94,14 @@
                 settings:allowDividerAbove="true"
                 settings:allowDividerBelow="true"/>
 
-        <!-- Device firmware version -->
+        <!-- Psycho version -->
+        <Preference android:key="psycho_version"
+                android:enabled="false"
+                android:shouldDisableView="false"
+                android:title="@string/psycho_version"
+                android:summary="@string/psycho_info_default"/>
+
+	<!-- Device firmware version -->
         <Preference android:key="firmware_version"
                 android:enabled="false"
                 android:shouldDisableView="false"

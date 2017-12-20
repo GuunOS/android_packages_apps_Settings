@@ -42,6 +42,9 @@
     <string name="root_appops_title">Manage root accesses</string>
     <string name="root_appops_summary">View and control the root rules</string>
 
+    <string name="psycho_version">Psycho OS Version</string>
+    <string name="psycho_info_default">0.1 alpha</string>
+
     <!-- About phone screen, Device model -->
     <string name="device_model">Device model</string>
     <!-- About phone screen, Device name -->
