@@ -262,6 +262,9 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
                 onBindTile(holder, tile);
                 holder.itemView.setTag(tile);
                 holder.itemView.setOnClickListener(this);
+                if (mDarkThemeEnabled) {
+                  holder.itemView.getBackground().setColorFilter(mPrimaryColor, Mode.SRC_ATOP);
+                }
                 break;
             case R.layout.suggestion_header:
                 onBindSuggestionHeader(holder);
