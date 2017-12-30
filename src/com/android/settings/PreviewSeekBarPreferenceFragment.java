@@ -18,9 +18,6 @@ package com.android.settings;
 
 import android.content.Context;
 import android.content.res.Configuration;
-import android.graphics.drawable.ClipDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.view.ViewPager;
@@ -127,8 +124,7 @@ public abstract class PreviewSeekBarPreferenceFragment extends SettingsPreferenc
         }
     }
 
-    private void switchPalette(int[] colors, int[] bottomColors, int colorValue,
-                               int selectedResId) {
+    private void switchPalette(int[] colors, int colorValue) {
         float sideMargin = getContext().getResources().getDimensionPixelSize(
                 R.dimen.theme_color_margin_side);
         mGrid.removeAllViews();
@@ -141,16 +137,10 @@ public abstract class PreviewSeekBarPreferenceFragment extends SettingsPreferenc
             final int count = i;
             final boolean selected = colorValue == i;
             final ImageView view = new ImageView(getContext());
-            Drawable[] circleLayers = new Drawable[2];
-            circleLayers[0] = getContext().getDrawable(R.drawable.color_circle_bottom);
-            circleLayers[1] = getContext().getDrawable(R.drawable.color_circle_top);
-            circleLayers[0].setTint(bottomColors[i]);
-            circleLayers[1].setTint(color);
-            ((ClipDrawable) circleLayers[0]).setLevel(5000);
-            ((ClipDrawable) circleLayers[1]).setLevel(5000);
-            view.setImageDrawable(new LayerDrawable(circleLayers));
+            view.setImageDrawable(getContext().getDrawable(R.drawable.color_circle));
+            view.setColorFilter(color);
             if (selected) {
-                view.setForeground(getContext().getDrawable(selectedResId));
+                view.setForeground(getContext().getDrawable(R.drawable.ic_check));
                 view.setForegroundGravity(Gravity.CENTER);
             }
             view.setOnClickListener(new OnClickListener() {
@@ -182,21 +172,18 @@ public abstract class PreviewSeekBarPreferenceFragment extends SettingsPreferenc
             mAccentShowing = Settings.Secure.getInt(getContext().getContentResolver(),
                     Settings.Secure.THEME_SETTINGS_MODE, 0) == 1;
             mAccentColorValue = Settings.Secure.getInt(getContext().getContentResolver(),
-                    Settings.Secure.THEME_ACCENT_COLOR, 0);
+                    Settings.Secure.THEME_ACCENT_COLOR, 1);
             mPrimaryColorValue = Settings.Secure.getInt(getContext().getContentResolver(),
                     Settings.Secure.THEME_PRIMARY_COLOR, 2);
             final int[] accentColors = getContext().getResources().getIntArray(
                     R.array.accent_colors);
             final int[] primaryColors = getContext().getResources().getIntArray(
                     R.array.primary_colors);
-            final int[] bgColors = getContext().getResources().getIntArray(
-                    R.array.background_colors);
             if (mAccentShowing) {
-                switchPalette(accentColors, accentColors, mAccentColorValue, R.drawable.ic_check);
+                switchPalette(accentColors, mAccentColorValue);
                 getActivity().setTitle(R.string.theme_accent_color);
             } else {
-              switchPalette(primaryColors, bgColors, mPrimaryColorValue,
-                      R.drawable.ic_check_accent);
+                switchPalette(primaryColors, mPrimaryColorValue);
                 getActivity().setTitle(R.string.theme_primary_color);
             }
             mAnimation = AnimationUtils.loadAnimation(getContext(),
@@ -207,13 +194,11 @@ public abstract class PreviewSeekBarPreferenceFragment extends SettingsPreferenc
                 public void onAnimationStart(Animation animation) {
                     if (!mAccentShowing) {
                         mAccentShowing = true;
-                        switchPalette(accentColors, accentColors, mAccentColorValue,
-                                R.drawable.ic_check);
+                        switchPalette(accentColors, mAccentColorValue);
                         getActivity().setTitle(R.string.theme_accent_color);
                     } else {
                         mAccentShowing = false;
-                        switchPalette(primaryColors, bgColors, mPrimaryColorValue,
-                                R.drawable.ic_check_accent);
+                        switchPalette(primaryColors, mPrimaryColorValue);
                         getActivity().setTitle(R.string.theme_primary_color);
                     }
                     Settings.Secure.putInt(getContext().getContentResolver(),
