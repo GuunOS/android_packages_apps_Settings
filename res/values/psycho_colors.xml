@@ -21,4 +21,6 @@ limitations under the License.
     <!-- Color engine -->
     <color name="pixel_primary_color">#242424</color>
     <color name="pixel_secondary_color">#3a3a3a</color>
+    <!-- App Shortcuts -->
+    <color name="app_short_tint">?android:attr/colorAccent</color>
 </resources>
