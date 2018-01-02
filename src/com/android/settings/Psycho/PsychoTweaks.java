@@ -25,7 +25,7 @@ public class PsychoTweaks extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.Psych);
+        addPreferencesFromResource(R.xml.psych);
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
