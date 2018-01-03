@@ -12,7 +12,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-public class PsychoTweaks extends SettingsPreferenceFragment implements
+public class dotSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "PsychoTweaks";
 
@@ -25,7 +25,7 @@ public class PsychoTweaks extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.psych);
+        addPreferencesFromResource(R.xml.psycho);
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
