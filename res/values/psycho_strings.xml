@@ -528,6 +528,7 @@
     <string name="magisk_title">Magisk Manager</string>
     <string name="magisk_summary">Root management</string>
     <string name="substratum_title">Substratum</string>
+    <string name="substratum_summary">Theme management</string>
 
     <string name="Psycho_activity_title">Psycho Tweaks</string>
     <string name="Psycho_header">Psycho Tweaks</string>
