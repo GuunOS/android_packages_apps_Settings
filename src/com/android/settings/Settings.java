@@ -161,6 +161,7 @@ public class Settings extends SettingsActivity {
 
     // Categories.
     public static class WirelessSettings extends SettingsActivity { /* empty */ }
+    public static class CustomSettings extends SettingsActivity { /* empty */ }
     public static class PsychoTweaks extends SettingsActivity { /* empty */ }
     public static class DeviceSettings extends SettingsActivity { /* empty */ }
     public static class PersonalSettings extends SettingsActivity { /* empty */ }
