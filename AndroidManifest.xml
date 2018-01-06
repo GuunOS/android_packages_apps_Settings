@@ -2510,7 +2510,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.category"
-                android:value="com.android.settings.category.custom" />
+                android:value="com.android.settings.category.CustomSettings" />
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.Psycho.PsychoTweaks" />
                 <meta-data android:name="com.android.settings.summary"
@@ -2805,7 +2805,7 @@
                 <action android:name="com.android.settings.action.SETTINGS" />
             </intent-filter>
             <meta-data android:name="com.android.settings.category"
-                android:value="com.android.settings.category.custom" />
+                android:value="com.android.settings.category.CustomSettings" />
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.MagiskManager" />
             <meta-data android:name="com.android.settings.summary"
@@ -2826,7 +2826,7 @@
                 <action android:name="com.android.settings.action.SETTINGS" />
             </intent-filter>
             <meta-data android:name="com.android.settings.category"
-                android:value="com.android.settings.category.custom" />
+                android:value="com.android.settings.category.CustomSettings" />
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.Substratum" />
             <meta-data android:name="com.android.settings.summary"
