@@ -533,5 +533,5 @@
     <string name="Psycho_activity_title">Psycho Tweaks</string>
     <string name="Psycho_header">Psycho Tweaks</string>
     <string name="Psycho_tweaks_title">Categories</string>
-    <string name="Psycho_summary">Go Psycho!</string>
+    <string name="psycho_summary">Go Psycho!</string>
 </resources>
