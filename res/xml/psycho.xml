@@ -12,9 +12,54 @@
 -->
 
 <PreferenceScreen
-
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:key="TweaksMainCategory"
     android:title="@string/Psycho_tweaks_title">
+     
+   <Preference
+       android:fragment="com.android.settings.fragments.System"
+       android:icon="@drawable/ic_system"
+       android:title="@string/system_category" />
+
+   <Preference
+       android:fragment="com.android.settings.fragments.Statusbar"
+       android:icon="@drawable/ic_statusbar"
+       android:title="@string/statusbar_category" />
+
+   <Preference
+       android:fragment="com.android.settings.fragments.Buttons"
+       android:icon="@drawable/ic_buttons"
+       android:title="@string/buttons_category" />
+
+   <Preference
+       android:fragment="com.android.settings.fragments.Lights"
+       android:icon="@drawable/ic_led"
+       android:title="@string/lights_category" />
+
+   <Preference
+       android:fragment="com.android.settings.fragments.Lockscreen"
+       android:icon="@drawable/ic_lockscreen"
+       android:title="@string/lockscreen_category" />
+
+   <Preference
+       android:fragment="com.android.settings.fragments.Gestures"
+       android:icon="@drawable/ic_gestures"
+       android:title="@string/gesture_preference_title" />
+
+   <Preference
+       android:fragment="com.android.settings.fragments.Misc"
+       android:icon="@drawable/ic_misc"
+       android:title="@string/misc_category" />
+
+   <Preference
+       android:fragment="com.android.settings.fragments.Privacy"
+       android:icon="@drawable/ic_privacy"
+       android:title="@string/privacy_category" />
+
+   <Preference
+       android:fragment="com.android.settings.fragments.Display"
+       android:icon="@drawable/ic_display_tweaks"
+       android:title="@string/display_tweaks_category" />
 
 </PreferenceScreen>
