@@ -1,12 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<!--
-This is the file youll now call in place of the icon call in Dashboard xml
-     Call your desired icon
-     @drawable/your_icon
-     color/defined_in_colors_xml((DONT CHANGE))
--->
-
-<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
-        android:src="@drawable/ic_psycho"
-        android:tint="?android:attr/colorAccent" />
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+        android:width="24.0dp"
+        android:height="24.0dp"
+        android:viewportWidth="24.0"
+        android:viewportHeight="24.0"
+        android:tint="?android:attr/colorAccent">
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M3590 3885 c-58 -20 -172 -56 -255 -82 l-150 -46 -160 24 c-135 20 -196 24 -390 23 -126 0 -246 -3 -265 -7 -32 -7 -39 -15 -79 -92 l-44 -85 -406 0 c-223 0 -411 -4 -418 -8 -9 -6 -3 -35 22 -115 19 -58 40 -132 47 -164 12 -51 17 -59 57 -82 60 -36 117 -86 143 -129 l22 -36 7 28 c14 52 27 59 99 52 89 -8 166 -29 290 -79 97 -39 112 -48 195 -129 49 -47 87 -89 83 -93 -3 -4 -64 5 -135 18 -70 14 -193 33 -273 42 -102 12 -155 22 -178 36 -18 10 -35 19 -36 19 -2 0 -6 -18 -10 -39 -4 -28 -21 -55 -58 -97 l-53 -57 63 -57 c34 -32 75 -61 90 -65 15 -3 62 -22 106 -42 l78 -35 22 26 21 27 104 -36 c121 -41 131 -42 131 -16 0 11 4 22 8 25 12 7 98 -84 286 -304 92 -107 180 -210 195 -227 16 -18 33 -33 39 -33 6 0 27 30 47 68 19 37 44 78 54 91 l18 23 137 -168 c76 -93 142 -169 148 -169 5 0 31 38 57 85 64 115 99 170 110 170 5 0 89 -72 187 -159 99 -88 180 -159 181 -157 1 1 10 72 19 159 10 86 21 157 25 157 4 0 38 -14 76 -31 37 -17 111 -48 163 -69 52 -21 137 -57 188 -79 51 -23 97 -41 103 -41 5 0 -17 35 -50 78 -108 140 -265 338 -300 378 l-35 39 189 3 189 2 -194 195 c-132 132 -189 196 -179 200 7 3 58 12 113 20 54 8 101 17 104 19 2 3 -3 18 -13 33 -23 38 -354 363 -402 395 -21 15 -101 48 -178 74 -111 38 -154 48 -207 49 -36 0 -64 3 -62 7 3 4 26 20 52 35 145 83 278 220 351 361 61 120 64 117 -89 67z" />
+</vector>
