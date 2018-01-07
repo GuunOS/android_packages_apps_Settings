@@ -534,4 +534,13 @@
     <string name="Psycho_header">ROM Extras</string>
     <string name="Psycho_tweaks_title">Categories</string>
     <string name="psycho_summary">Go Psycho!</string>
+     
+    <string name="system_category">System</string>
+    <string name="buttons_category">Buttons</string>
+    <string name="display_tweaks_category">Display</string>
+    <string name="misc_category">Misc</string>
+    <string name="privacy_category">Privacy</string>
+    <string name="statusbar_category">Status bar</string>
+    <string name="lockscreen_category">Lockscreen</string>
+    <string name="lights_category">Lights</string>
 </resources>
