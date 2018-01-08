@@ -40,6 +40,13 @@
                 android:defaultValue="false"
                 cm:requiresFeature="cmhardware:FEATURE_HIGH_TOUCH_SENSITIVITY" />
      
+    <cyanogenmod.preference.CMSystemSettingSwitchPreference
+                android:key="systemui_burnin_protection"
+                android:title="@string/burnin_protection_title"
+                android:summary="@string/burnin_protection_summary"
+                android:defaultValue="false"
+                cm:requiresConfig="@*cyanogenmod.platform:bool/config_enableBurnInProtection"/>
+     
     <cyanogenmod.preference.CMGlobalSettingSwitchPreference
                 android:key="wake_when_plugged_or_unplugged"
                 android:title="@string/wake_when_plugged_or_unplugged_title"
