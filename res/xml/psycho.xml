@@ -20,55 +20,91 @@
    <Preference
        android:icon="@drawable/ic_system"
        android:title="@string/system_category">
-        <intent android:action=".fragments.System" />
+        <intent 
+        android:action="android.intent.action.VIEW"
+        android:targetPackage="com.android.settings"
+        android:targetClass="com.android.settings.fragments.System"
+    />
     </Preference>
 
    <Preference
        android:icon="@drawable/ic_statusbar"
        android:title="@string/statusbar_category">
-     <intent android:action=".fragments.Statusbar" />
+     <intent 
+        android:action="android.intent.action.VIEW"
+        android:targetPackage="com.android.settings"
+        android:targetClass="com.android.settings.fragments.Statusbar"
+    />
     </Preference>
      
    <Preference
        android:icon="@drawable/ic_buttons"
        android:title="@string/buttons_category" >
-     <intent android:action=".fragments.buttons" />
+     <intent 
+        android:action="android.intent.action.VIEW"
+        android:targetPackage="com.android.settings"
+        android:targetClass="com.android.settings.fragments.Buttons"
+    />
     </Preference>
 
    <Preference
        android:icon="@drawable/ic_led"
        android:title="@string/lights_category" >
-<intent android:action=".fragments.Lights" />
+<intent 
+        android:action="android.intent.action.VIEW"
+        android:targetPackage="com.android.settings"
+        android:targetClass="com.android.settings.fragments.Lights"
+    />
     </Preference>
 
    <Preference
        android:icon="@drawable/ic_lockscreen"
        android:title="@string/lockscreen_category">
-<intent android:action=".fragments.Lockscreen" />
+<intent 
+        android:action="android.intent.action.VIEW"
+        android:targetPackage="com.android.settings"
+        android:targetClass="com.android.settings.fragments.Lockscreen"
+    />
     </Preference>
 
    <Preference
        android:icon="@drawable/ic_gestures"
        android:title="@string/gesture_preference_title" >
-<intent android:action=".fragments.Gestures" />
+<intent 
+        android:action="android.intent.action.VIEW"
+        android:targetPackage="com.android.settings"
+        android:targetClass="com.android.settings.fragments.Gestures"
+    />
     </Preference>
 
    <Preference
        android:icon="@drawable/ic_misc"
        android:title="@string/misc_category" >
-<intent android:action=".fragments.Misc" />
+<intent 
+        android:action="android.intent.action.VIEW"
+        android:targetPackage="com.android.settings"
+        android:targetClass="com.android.settings.fragments.Misc"
+    />
     </Preference>
 
    <Preference
        android:icon="@drawable/ic_privacy"
        android:title="@string/privacy_category" >
-<intent android:action=".fragments.Privacy" />
+<intent 
+        android:action="android.intent.action.VIEW"
+        android:targetPackage="com.android.settings"
+        android:targetClass="com.android.settings.fragments.Privacy"
+    />
     </Preference>
 
    <Preference
        android:icon="@drawable/ic_display_tweaks"
        android:title="@string/display_tweaks_category" >
-<intent android:action=".fragments.Display" />
+<intent 
+        android:action="android.intent.action.VIEW"
+        android:targetPackage="com.android.settings"
+        android:targetClass="com.android.settings.fragments.Display"
+    />
     </Preference>
 
 </PreferenceScreen>
