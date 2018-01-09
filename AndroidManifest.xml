@@ -2517,6 +2517,60 @@
                 <meta-data android:name="com.android.settings.summary"
                     android:resource="@string/psycho_summary" />
         </activity>
+	    
+	<activity android:name=".fragments.System" 
+              android:label="@string/system_category">
+        <intent android:targetPackage="com.android.settings"
+         android:targetClass="com.android.settings.fragmemts.System"/>
+    </activity>
+	    
+	    <activity android:name=".fragments.Statusbar" 
+              android:label="@string/statusbar_category">
+        <intent android:targetPackage="com.android.settings"
+         android:targetClass="com.android.settings.fragmemts.Statusbar"/>
+    </activity>
+	    
+	 <activity android:name=".fragments.Buttons" 
+              android:label="@string/buttons_category">
+        <intent android:targetPackage="com.android.settings"
+         android:targetClass="com.android.settings.fragmemts.Buttons"/>
+    </activity>   
+	    
+	 <activity android:name=".fragments.Lights" 
+              android:label="@string/lights_category">
+        <intent android:targetPackage="com.android.settings"
+         android:targetClass="com.android.settings.fragmemts.Lights"/>
+    </activity>
+	    
+	    <activity android:name=".fragments.Lockscreen" 
+              android:label="@string/lockscreen_category">
+        <intent android:targetPackage="com.android.settings"
+         android:targetClass="com.android.settings.fragmemts.Lockscreen"/>
+    </activity>
+	    
+	<activity android:name=".fragments.Gestures" 
+              android:label="@string/gesture_preference_title">
+        <intent android:targetPackage="com.android.settings"
+         android:targetClass="com.android.settings.fragmemts.Gestures"/>
+    </activity>
+	    
+	<activity android:name=".fragments.Misc" 
+              android:label="@string/misc_category">
+        <intent android:targetPackage="com.android.settings"
+         android:targetClass="com.android.settings.fragmemts.Misc"/>
+    </activity>
+	    
+	<activity android:name=".fragments.Privacy" 
+              android:label="@string/privacy_category">
+        <intent android:targetPackage="com.android.settings"
+         android:targetClass="com.android.settings.fragmemts.Privacy"/>
+    </activity>    
+	    
+	<activity android:name=".fragments.Display" 
+              android:label="@string/display_category">
+        <intent android:targetPackage="com.android.settings"
+         android:targetClass="com.android.settings.fragmemts.Display"/>
+    </activity>    
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"
