@@ -18,48 +18,57 @@
     android:title="@string/Psycho_tweaks_title">
      
    <Preference
-       android:fragment="com.android.settings.fragments.System"
        android:icon="@drawable/ic_system"
-       android:title="@string/system_category" />
+       android:title="@string/system_category">
+        <intent android:action=".fragments.System" />
+    </Preference>
 
    <Preference
-       android:fragment="com.android.settings.fragments.Statusbar"
        android:icon="@drawable/ic_statusbar"
-       android:title="@string/statusbar_category" />
-
+       android:title="@string/statusbar_category">
+     <intent android:action=".fragments.Statusbar" />
+    </Preference>
+     
    <Preference
-       android:fragment="com.android.settings.fragments.Buttons"
        android:icon="@drawable/ic_buttons"
-       android:title="@string/buttons_category" />
+       android:title="@string/buttons_category" >
+     <intent android:action=".fragments.buttons" />
+    </Preference>
 
    <Preference
-       android:fragment="com.android.settings.fragments.Lights"
        android:icon="@drawable/ic_led"
-       android:title="@string/lights_category" />
+       android:title="@string/lights_category" >
+<intent android:action=".fragments.Lights" />
+    </Preference>
 
    <Preference
-       android:fragment="com.android.settings.fragments.Lockscreen"
        android:icon="@drawable/ic_lockscreen"
-       android:title="@string/lockscreen_category" />
+       android:title="@string/lockscreen_category">
+<intent android:action=".fragments.Lockscreen" />
+    </Preference>
 
    <Preference
-       android:fragment="com.android.settings.fragments.Gestures"
        android:icon="@drawable/ic_gestures"
-       android:title="@string/gesture_preference_title" />
+       android:title="@string/gesture_preference_title" >
+<intent android:action=".fragments.Gestures" />
+    </Preference>
 
    <Preference
-       android:fragment="com.android.settings.fragments.Misc"
        android:icon="@drawable/ic_misc"
-       android:title="@string/misc_category" />
+       android:title="@string/misc_category" >
+<intent android:action=".fragments.Misc" />
+    </Preference>
 
    <Preference
-       android:fragment="com.android.settings.fragments.Privacy"
        android:icon="@drawable/ic_privacy"
-       android:title="@string/privacy_category" />
+       android:title="@string/privacy_category" >
+<intent android:action=".fragments.Privacy" />
+    </Preference>
 
    <Preference
-       android:fragment="com.android.settings.fragments.Display"
        android:icon="@drawable/ic_display_tweaks"
-       android:title="@string/display_tweaks_category" />
+       android:title="@string/display_tweaks_category" >
+<intent android:action=".fragments.Display" />
+    </Preference>
 
 </PreferenceScreen>
