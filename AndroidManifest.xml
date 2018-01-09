@@ -2567,7 +2567,7 @@
     </activity>    
 	    
 	<activity android:name=".fragments.Display" 
-              android:label="@string/display_category">
+              android:label="@string/display_tweaks_category">
         <intent android:targetPackage="com.android.settings"
          android:targetClass="com.android.settings.fragmemts.Display"/>
     </activity>    
