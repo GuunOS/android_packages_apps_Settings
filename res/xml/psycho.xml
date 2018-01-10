@@ -60,7 +60,7 @@
     </PreferenceScreen>
 
    <PreferenceScreen
-       android:fragment="com.android.settings.fragments.Privacy"
+       android:fragment="org.cyanogenmod.cmparts.PrivacySettings"
        android:icon="@drawable/ic_privacy"
        android:title="@string/privacy_category" >
     </PreferenceScreen>
