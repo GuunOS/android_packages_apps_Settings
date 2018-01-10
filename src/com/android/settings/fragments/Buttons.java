@@ -1,4 +1,4 @@
-package com.android.settings.Psycho;
+package com.android.settings.fragments;
 
 import android.os.Bundle;
 import android.preference.Preference;
