@@ -19,8 +19,9 @@ limitations under the License.
     <color name="action_bar_icon_tint">@android:color/white</color>
     <color name="text_color_white">@android:color/white</color>
     <!-- Color engine -->
-    <color name="pixel_primary_color">#242424</color>
-    <color name="pixel_secondary_color">#3a3a3a</color>
+    <color name="pixel_primary_color">#f5f5f5</color>
+    <color name="pixel_primary_color_dark">#e0e0e0</color>
+    <color name="pixel_secondary_color">#fafafa</color>
     <!-- App Shortcuts -->
     <color name="app_short_tint">?android:attr/colorAccent</color>
 </resources>
