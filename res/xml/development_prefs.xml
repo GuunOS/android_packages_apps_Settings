@@ -68,6 +68,11 @@
         android:summary="@string/bt_hci_snoop_log_summary"/>
 
     <SwitchPreference
+        android:key="theme_force_enabled"
+        android:title="@string/theme_force_enabled_title"
+        android:summary="@string/theme_force_enabled_summary" />
+
+    <SwitchPreference
         android:key="force_authorize_substratum_packages"
         android:title="@string/force_authorize_substratum_packages_title"
         android:summary="@string/force_authorize_substratum_packages_summary" />

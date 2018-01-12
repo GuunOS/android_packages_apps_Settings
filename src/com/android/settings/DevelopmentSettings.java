@@ -249,6 +249,8 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
 
     private static final int[] MOCK_LOCATION_APP_OPS = new int[] {AppOpsManager.OP_MOCK_LOCATION};
 
+    private static final String THEME_FORCE_ENABLED = "theme_force_enabled";
+
     private IWindowManager mWindowManager;
     private IBackupManager mBackupManager;
     private IWebViewUpdateService mWebViewUpdateService;
@@ -341,6 +343,8 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
     private ListPreference mRootAccess;
     private Object mSelectedRootValue;
     private PreferenceScreen mDevelopmentTools;
+
+    private SwitchPreference mThemeForceEnabled;
 
     private final ArrayList<Preference> mAllPrefs = new ArrayList<Preference>();
 
@@ -501,6 +505,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
         mSimulateColorSpace = addListPreference(SIMULATE_COLOR_SPACE);
         mUSBAudio = findAndInitSwitchPref(USB_AUDIO_KEY);
         mForceResizable = findAndInitSwitchPref(FORCE_RESIZABLE_KEY);
+        mThemeForceEnabled = findAndInitSwitchPref(THEME_FORCE_ENABLED);
 
         mImmediatelyDestroyActivities = (SwitchPreference) findPreference(
                 IMMEDIATELY_DESTROY_ACTIVITIES_KEY);
@@ -821,6 +826,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
         updateAdbOverNetwork();
         updateUpdateRecoveryOptions();
         updateForceAuthorizeSubstratumPackagesOptions();
+        updateThemeForceEnabledOptions();
     }
 
     private void updateAdbOverNetwork() {
@@ -861,6 +867,17 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
         mForceAuthorizeSubstratumPackages.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
                 Settings.Secure.FORCE_AUTHORIZE_SUBSTRATUM_PACKAGES, 0) != 0);
      }
+
+    private void writeThemeForceEnabledOptions() {
+      Settings.Secure.putInt(getActivity().getContentResolver(),
+              Settings.Secure.THEME_FORCE_ENABLED,
+              mThemeForceEnabled.isChecked() ? 1 : 0);
+    }
+
+    private void updateThemeForceEnabledOptions() {
+        mThemeForceEnabled.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
+              Settings.Secure.THEME_FORCE_ENABLED, 0) != 0);
+    }
 
     private void resetDangerousOptions() {
         mDontPokeProperties = true;
@@ -2307,6 +2324,8 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
                 }
                 mUpdateRecoveryDialog.setOnDismissListener(this);
             }
+        } else if(preference == mThemeForceEnabled) {
+          writeThemeForceEnabledOptions();
         } else {
             return super.onPreferenceTreeClick(preference);
         }

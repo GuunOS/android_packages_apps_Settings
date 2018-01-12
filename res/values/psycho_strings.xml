@@ -524,6 +524,8 @@
     <string name="cyan">Scooter</string>
     <string name="grey">Grey</string>
     <string name="default_string">Default</string>
+    <string name="theme_force_enabled_title">Force enable theme</string>
+    <string name="theme_force_enabled_summary">Theme will be forcibly enabled nonetheless OMS state</string>
 
     <string name="magisk_title">Magisk Manager</string>
     <string name="magisk_summary">Root Management</string>
@@ -534,7 +536,7 @@
     <string name="Psycho_header">ROM Extras</string>
     <string name="Psycho_tweaks_title">Categories</string>
     <string name="psycho_summary">Go Psycho!</string>
-     
+
     <string name="system_category">System</string>
     <string name="buttons_category">Buttons</string>
     <string name="display_tweaks_category">Display</string>
