@@ -1,7 +1,7 @@
 package com.android.settings.fragments;
 
 import android.os.Bundle;
-import android.preference.Preference;
+import android.support.v7.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
@@ -29,13 +29,13 @@ public class Buttons extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.buttons);
-            
+        //addPreferencesFromResource(R.xml.buttons);
+
         Preference navpreference = getPreferenceManager().findPreference(getString(R.string.buttons_category));
         navpreference.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 
         	public boolean onPreferenceClick(Preference navpreference) {
-		
+
 		final Intent intent = new Intent(Intent.ACTION_MAIN, null);
 
 		intent.addCategory(Intent.CATEGORY_LAUNCHER);

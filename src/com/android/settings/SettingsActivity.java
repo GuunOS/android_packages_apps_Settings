@@ -59,6 +59,8 @@ import android.widget.Button;
 import android.widget.SearchView;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.util.TypedValue;
+import android.support.v4.content.ContextCompat;
 
 import com.android.internal.util.ArrayUtils;
 import com.android.settings.Settings.WifiSettingsActivity;
