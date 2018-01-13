@@ -57,6 +57,8 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SearchView;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 
 import com.android.internal.util.ArrayUtils;
 import com.android.settings.Settings.WifiSettingsActivity;
@@ -714,6 +716,14 @@ public class SettingsActivity extends SettingsDrawerActivity
 
         mActionBar = getActionBar();
         if (mActionBar != null) {
+          if (themeMode == 2) {
+            final Drawable arrowDrawable = ContextCompat.getDrawable(this, R.drawable.abc_ic_ab_back_mtrl_am_alpha);
+            TypedValue typedValue = new TypedValue();
+            TypedArray a = mContext.obtainStyledAttributes(typedValue.data, new int[] { R.attr.colorAccent });
+            int color = a.getColor(0, 0);
+            arrowDrawable.setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
+            mActionBar.setHomeAsUpIndicator(arrowDrawable);
+          }
             mActionBar.setDisplayHomeAsUpEnabled(mDisplayHomeAsUpEnabled);
             mActionBar.setHomeButtonEnabled(mDisplayHomeAsUpEnabled);
         }
