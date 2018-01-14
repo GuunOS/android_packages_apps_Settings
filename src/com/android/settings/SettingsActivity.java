@@ -140,6 +140,7 @@ import com.android.settings.wifi.p2p.WifiP2pSettings;
 import com.android.settingslib.drawer.DashboardCategory;
 import com.android.settingslib.drawer.SettingsDrawerActivity;
 import com.android.settingslib.drawer.Tile;
+import android.graphics.drawable.Drawable;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -714,6 +715,9 @@ public class SettingsActivity extends SettingsDrawerActivity
 
         mActionBar = getActionBar();
         if (mActionBar != null) {
+          if (themeMode == 2) {
+            mActionBar.setHomeAsUpIndicator(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
+          }
             mActionBar.setDisplayHomeAsUpEnabled(mDisplayHomeAsUpEnabled);
             mActionBar.setHomeButtonEnabled(mDisplayHomeAsUpEnabled);
         }
