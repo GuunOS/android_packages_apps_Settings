@@ -16,11 +16,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/statusbar_category">
-     
+
     <PreferenceScreen
                 android:fragment="com.android.settings.fragments.NetworkTrafficSettings"
                 android:key="nettraffic_settings"
                 android:title="@string/nettraffic_settings_title"
                 android:summary="@string/nettraffic_settings_summary" />
+
+    <SwitchPreference
+                android:key="show_fourg"
+                android:title="@string/show_fourg_title"
+                android:summary="@string/show_fourg_summary"
+                android:defaultValue="false" />
 
 </PreferenceScreen>
