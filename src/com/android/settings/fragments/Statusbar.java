@@ -14,7 +14,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-public class Statusbar extends SettingsPreferenceFragment implements
+public class Statusbar extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "StatusbarTweaks";
     private static final String KEY_SHOW_FOURG = "show_fourg";
