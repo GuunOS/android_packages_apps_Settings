@@ -10,7 +10,7 @@ import android.content.Intent;
 
 import com.android.settings.R;
 
-public class PsychoTweaks PreferenceFragment implements Preference.OnPreferenceChangeListener {
+public class PsychoTweaks extends PreferenceFragment implements Preference.OnPreferenceChangeListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
