@@ -2,24 +2,15 @@ package com.android.settings.Psycho;
 
 import android.os.Bundle;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
-import android.preference.PreferenceCategory;
-import android.preference.PreferenceScreen;
-
-import com.android.internal.logging.MetricsProto.MetricsEvent;
+import android.preference.PreferenceFragment;
+import android.preference.Preference.OnPreferenceClickListener;
+import android.preference.Preference.OnPreferenceChangeListener;
+import android.content.ComponentName;
+import android.content.Intent;
 
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.Utils;
 
-public class PsychoTweaks extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener {
-    private static final String TAG = "PsychoTweaks";
-
-    @Override
-    protected int getMetricsCategory() {
-        return MetricsEvent.APPLICATION;
-    }
+public class PsychoTweaks PreferenceFragment implements Preference.OnPreferenceChangeListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,8 +19,8 @@ public class PsychoTweaks extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.psycho);
     }
 
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-
-        return true;
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object o) {
+        return false;
     }
 }
