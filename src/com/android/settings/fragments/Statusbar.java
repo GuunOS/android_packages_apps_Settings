@@ -32,7 +32,7 @@ public class Statusbar extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.statusbar);
 
-        PreferenceScreen prefSet = getPreferenceScreen();
+        android.preference.PreferenceScreen prefSet = getPreferenceScreen();
         mShowFourG = (SwitchPreference) prefSet.findPreference(KEY_SHOW_FOURG);
             PackageManager pm = getActivity().getPackageManager();
             if (!pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY)) {
