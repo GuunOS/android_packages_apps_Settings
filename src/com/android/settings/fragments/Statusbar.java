@@ -5,6 +5,7 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
+import android.support.v7.preference.PreferenceScreen;
 import android.content.pm.PackageManager;
 import android.preference.SwitchPreference;
 
@@ -32,7 +33,7 @@ public class Statusbar extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.statusbar);
 
-        android.preference.PreferenceScreen prefSet = getPreferenceScreen();
+        PreferenceScreen prefSet = getPreferenceScreen();
         mShowFourG = (SwitchPreference) prefSet.findPreference(KEY_SHOW_FOURG);
             PackageManager pm = getActivity().getPackageManager();
             if (!pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY)) {
