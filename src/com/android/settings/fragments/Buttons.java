@@ -31,7 +31,7 @@ public class Buttons extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.buttons);
             
-        Preference navpreference = getPreferenceManager().findPreference(getString(R.string.buttons_category));
+        android.preference.Preference navpreference = getPreferenceManager().findPreference(getString(R.string.buttons_category));
         navpreference.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 
         	public boolean onPreferenceClick(Preference navpreference) {
