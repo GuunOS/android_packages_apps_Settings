@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
-import android.preference.PreferenceScreen;
+//import android.preference.PreferenceScreen;
 import android.support.v7.preference.PreferenceScreen;
 import android.content.pm.PackageManager;
 import android.preference.SwitchPreference;
