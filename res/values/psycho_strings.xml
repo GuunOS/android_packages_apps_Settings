@@ -546,8 +546,4 @@
     <string name="lockscreen_category">Lockscreen</string>
     <string name="lights_category">Lights</string>
     <string name="buttons_nav">Navigation Bar</string>
-     
-    <!-- Statusbar 4G LTE switch -->
-    <string name="show_fourg_title">Show 4G instead of LTE</string>
-    <string name="show_fourg_summary">Replaces LTE statusbar indicator with 4G</string>
 </resources>
