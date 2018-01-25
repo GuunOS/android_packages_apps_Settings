@@ -2,34 +2,48 @@ package com.android.settings.fragments;
 
 import android.os.Bundle;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
-import android.preference.PreferenceCategory;
-import android.preference.PreferenceScreen;
-
-import com.android.internal.logging.MetricsProto.MetricsEvent;
+import android.preference.PreferenceFragment;
+import android.preference.Preference.OnPreferenceClickListener;
+import android.preference.Preference.OnPreferenceChangeListener;
+import android.content.ComponentName;
+import android.content.Intent;
 
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.Utils;
 
-public class Statusbar extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener {
-    private static final String TAG = "StatusbarTweaks";
 
-    @Override
-    protected int getMetricsCategory() {
-        return MetricsEvent.APPLICATION;
-    }
+public class Statusbar extends PreferenceFragment implements Preference.OnPreferenceChangeListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.statusbar);
+
+        Preference navpreference = getPreferenceManager().findPreference(getString(R.string.statusbar_category));
+        navpreference.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+
+        	public boolean onPreferenceClick(Preference navpreference) {
+
+		final Intent intent = new Intent(Intent.ACTION_MAIN, null);
+
+		intent.addCategory(Intent.CATEGORY_LAUNCHER);
+
+		final ComponentName cn = new ComponentName("org.cyanogenmod.cmparts", "org.cyanogenmod.cmparts.statusbar.StatusBarSettings");
+
+		intent.setComponent(cn);
+
+		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+		startActivity( intent);
+
+		return true;
+        	}
+        });
+
     }
 
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-
-        return true;
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object o) {
+        return false;
     }
 }
