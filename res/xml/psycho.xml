@@ -16,26 +16,32 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:key="TweaksMainCategory"
     android:title="@string/Psycho_tweaks_title">
-     
-   <PreferenceScreen
+
+   <!--<PreferenceScreen
        android:fragment="com.android.settings.fragments.System"
        android:icon="@drawable/ic_system"
        android:title="@string/system_category">
-    </PreferenceScreen>
+    </PreferenceScreen>-->
+
+   <PreferenceScreen
+       android:fragment="com.android.settings.fragments.Display"
+       android:icon="@drawable/ic_display_tweaks"
+       android:title="@string/display_tweaks_category" >
+   </PreferenceScreen>
 
    <PreferenceScreen
        android:fragment="com.android.settings.fragments.Statusbar"
        android:icon="@drawable/ic_statusbar"
        android:title="@string/statusbar_category">
     </PreferenceScreen>
-     
+
    <PreferenceScreen
        android:fragment="com.android.settings.fragments.Buttons"
        android:icon="@drawable/ic_buttons"
        android:title="@string/buttons_category" >
     </PreferenceScreen>
 
-   <PreferenceScreen
+   <!--<PreferenceScreen
        android:fragment="com.android.settings.fragments.Lights"
        android:icon="@drawable/ic_led"
        android:title="@string/lights_category" >
@@ -63,12 +69,6 @@
        android:fragment="com.android.settings.fragments.Privacy"
        android:icon="@drawable/ic_privacy"
        android:title="@string/privacy_category" >
-    </PreferenceScreen>
-
-   <PreferenceScreen
-       android:fragment="com.android.settings.fragments.Display"
-       android:icon="@drawable/ic_display_tweaks"
-       android:title="@string/display_tweaks_category" >
-    </PreferenceScreen>
+    </PreferenceScreen>-->
 
 </PreferenceScreen>
