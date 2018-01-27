@@ -543,6 +543,7 @@
     <string name="misc_category">Misc</string>
     <string name="privacy_category">Privacy</string>
     <string name="statusbar_category">Status bar</string>
+    <string name="statusbar_summary">Extra StatusBar Settings</string>
     <string name="lockscreen_category">Lockscreen</string>
     <string name="lights_category">Lights</string>
     <string name="buttons_nav">Navigation Bar</string>
