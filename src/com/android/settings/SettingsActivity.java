@@ -147,7 +147,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import com.android.settings.Psycho.PsychoTweaks;
+import com.android.settings.Psycho.PsychoTweaksStart;
 
 public class SettingsActivity extends SettingsDrawerActivity
         implements PreferenceManager.OnPreferenceTreeClickListener,
@@ -261,8 +261,6 @@ public class SettingsActivity extends SettingsDrawerActivity
             Settings.RoamingSettingsActivity.class.getName(),
             Settings.SimSettingsActivity.class.getName(),
             Settings.WirelessSettingsActivity.class.getName(),
-            //Psycho_Tweaks
-            PsychoTweaks.class.getName(),
             //device_section
             Settings.HomeSettingsActivity.class.getName(),
             Settings.SoundSettingsActivity.class.getName(),
@@ -383,7 +381,7 @@ public class SettingsActivity extends SettingsDrawerActivity
             NightDisplaySettings.class.getName(),
             ManageDomainUrls.class.getName(),
             AutomaticStorageManagerSettings.class.getName(),
-            PsychoTweaks.class.getName(),
+            PsychoTweaksStart.class.getName(),
     };
 
 
