@@ -18,15 +18,15 @@
     android:title="@string/statusbar_category">
 
     <PreferenceScreen
+            android:fragment="org.cyanogenmod.cmparts.statusbar.StatusBarSettings"
   	        android:key="@string/statusbar_category"
           	android:title="@string/statusbar_category"
-            android:summary="@string/statusbar_summary">
-  	</PreferenceScreen>
+            android:summary="@string/statusbar_summary" />
 
     <PreferenceScreen
+                android:fragment="com.android.settings.fragments.NetworkTrafficSettings"
                 android:key="nettraffic_settings"
                 android:title="@string/nettraffic_settings_title"
-                android:summary="@string/nettraffic_settings_summary">
-    </PreferenceScreen>
+                android:summary="@string/nettraffic_settings_summary" />
 
 </PreferenceScreen>
