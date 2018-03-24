@@ -187,10 +187,6 @@
 
     <style name="Theme.ActionBar" parent="@android:style/Widget.Material.ActionBar.Solid">
         <item name="android:contentInsetStart">@dimen/actionbar_contentInsetStart</item>
-        <item name="android:titleTextStyle">@style/ActionBar.TitleTextStyle</item>
-    </style>
-
-    <style name="ActionBar.TitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textColor">?android:attr/colorAccent</item>
     </style>
 
@@ -312,7 +308,7 @@
     <style name="FallbackHomeProgressBar" parent="FallbackHome">
         <item name="android:colorControlActivated">?android:attr/textColorPrimary</item>
     </style>
-     
+
     <style name="PrefsTheme" parent="PreferenceThemeOverlay.v14.Material">
         <item name="android:divider">@null</item>
         <item name="android:dividerHeight">0dp</item>
