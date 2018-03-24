@@ -3287,9 +3287,5 @@
             </intent-filter>
         </activity>
 
-	<activity
-          android:name=".fragments.NetworkTrafficSettings"
-          android:label="@string/nettraffic_settings_title" />
-
     </application>
 </manifest>
