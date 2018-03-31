@@ -547,4 +547,6 @@
     <string name="lockscreen_category">Lockscreen</string>
     <string name="lights_category">Lights</string>
     <string name="buttons_nav">Navigation Bar</string>
+    <string name="mod_version">Psycho OS</string>
+    <string name="mod_version_default">Go Psycho!</string>
 </resources>
