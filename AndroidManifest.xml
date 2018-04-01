@@ -2545,7 +2545,7 @@
         </activity>
 
         <activity android:name="Settings$StatusTweaks"
-                android:label="@string/s_category"
+                android:label="@string/statusbar_category"
                 android:icon="@drawable/ic_statusbar"
                 android:taskAffinity="">
             <intent-filter android:priority="1">
