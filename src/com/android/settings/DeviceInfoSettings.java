@@ -83,8 +83,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_MOD_VERSION = "mod_version";
     private static final String KEY_MOD_BUILD_DATE = "build_date";
     private static final String KEY_MOD_API_LEVEL = "mod_api_level";
-    private static final String KEY_MOD_VERSION = "mod_version";
-
+    
     static final int TAPS_TO_BE_A_DEVELOPER = 5;
 
     long[] mHits = new long[3];
