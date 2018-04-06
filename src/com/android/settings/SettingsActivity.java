@@ -716,8 +716,8 @@ public class SettingsActivity extends SettingsDrawerActivity
           if (themeMode == 2) {
             mActionBar.setHomeAsUpIndicator(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
           }
-            mActionBar.setDisplayHomeAsUpEnabled(mDisplayHomeAsUpEnabled);
-            mActionBar.setHomeButtonEnabled(mDisplayHomeAsUpEnabled);
+            mActionBar.setDisplayHomeAsUpEnabled(true);
+            mActionBar.setHomeButtonEnabled(true);
         }
         mSwitchBar = (SwitchBar) findViewById(R.id.switch_bar);
         if (mSwitchBar != null) {
