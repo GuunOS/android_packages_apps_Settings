@@ -23,7 +23,7 @@ public class PsychoTweaksStart extends SettingsPreferenceFragment {
 
     private void startDS(){
         Intent psychosettingsStartIntent = new Intent();
-        psychosettingsStartIntent.setClassName("com.psycho", "com.psycho.Main");
+        psychosettingsStartIntent.setClassName("com.android.settings", "com.android.settings.Psycho.Main");
         startActivity(psychosettingsStartIntent);
         finish();
     }

@@ -1123,4 +1123,17 @@
         <item>90</item>
     </string-array>
 
+    <array name="tint">
+        <item>#009688</item>
+        <item>#76c124</item>
+        <item>#24b7d6</item>
+        <item>#4285F4</item>
+        <item>#ffc90f</item>
+        <item>#ff3d00</item>
+        <item>#f90028</item>
+        <item>#ff1b70</item>
+        <item>#6f24d6</item>
+        <item>#5d5d5d</item>
+    </array>
+
 </resources>

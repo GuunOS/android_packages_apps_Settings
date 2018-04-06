@@ -22,6 +22,28 @@ limitations under the License.
     <color name="pixel_primary_color">#f5f5f5</color>
     <color name="pixel_primary_color_dark">#e0e0e0</color>
     <color name="pixel_secondary_color">#fafafa</color>
-    <!-- App Shortcuts -->
-    <color name="app_short_tint">?android:attr/colorAccent</color>
+
+    <color name="colorPrimary">#F5F5F5</color>
+    <color name="colorPrimaryDark">#e0e0e0</color>
+    <color name="colorAccent">#2196F3</color>
+    <color name="colorStock">#212121</color>
+    <color name="dialog_background_color">#fafafa</color>
+    <color name="dialog_background_scrim">#99323232</color>
+    <color name="teal_accent_color">#009688</color>
+    <color name="blue_accent_color">#4285F4</color>
+    <color name="red_accent_color">#f90028</color>
+    <color name="orange_accent_color">#ff3d00</color>
+    <color name="green_accent_color">#76c124</color>
+    <color name="yellow_accent_color">#ffc90f</color>
+    <color name="purple_accent_color">#6f24d6</color>
+    <color name="pink_accent_color">#ff1b70</color>
+    <color name="cyan_accent_color">#24b7d6</color>
+    <color name="grey_accent_color">#5d5d5d</color>
+    <color name="dark">#303030</color>
+    <color name="black">#000000</color>
+    <color name="back">#fafafa</color>
+    <color name="text_main_stock">#212121</color>
+    <color name="text_sub">#757575</color>
+    <color name="text_main_dark">#FFFFFF</color>
+    <color name="trans">#00FFFFFF</color>
 </resources>

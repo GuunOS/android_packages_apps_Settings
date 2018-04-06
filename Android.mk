@@ -27,6 +27,15 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
 
 LOCAL_MODULE_TAGS := optional
 
+appcompat_dir := ../../../$(SUPPORT_LIBRARY_ROOT)/v7/appcompat/res
+cardview_dir := ../../../$(SUPPORT_LIBRARY_ROOT)/v7/cardview/res
+recyclerview_dir := ../../../$(SUPPORT_LIBRARY_ROOT)/v7/recyclerview/res
+design_dir := ../../../$(SUPPORT_LIBRARY_ROOT)/design/res
+preference_v7_dir := ../../../$(SUPPORT_LIBRARY_ROOT)/v7/preference/res
+preference_v14_dir := ../../../$(SUPPORT_LIBRARY_ROOT)/v14/preference/res
+
+res_dirs := res $(appcompat_dir) $(cardview_dir) $(recyclerview_dir) $(design_dir) $(preference_v7_dir) $(preference_v14_dir)
+
 LOCAL_SRC_FILES := \
         $(call all-java-files-under, src) \
 				$(call all-java-files-under, ../PsychoSupport/src) \
@@ -46,7 +55,7 @@ LOCAL_PRIVILEGED_MODULE := true
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
 LOCAL_AAPT_FLAGS := --auto-add-overlay \
-    --extra-packages android.support.v7.preference:android.support.v14.preference:android.support.v17.preference:android.support.v7.appcompat:android.support.v7.recyclerview
+    --extra-packages android.support.v7.appcompat:android.support.v7.cardview:android.support.v7.recyclerview:android.support.design:android.support.v7.preference:android.support.v14.preference:android.support.v17.preference
 
 ifneq ($(INCREMENTAL_BUILDS),)
     LOCAL_PROGUARD_ENABLED := disabled

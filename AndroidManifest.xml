@@ -132,6 +132,21 @@
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
 
+        <activity android:name=".Main"
+             android:theme="@style/stock_theme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".accent"
+            android:theme="@style/stock_theme.Dialog" />
+        <activity
+            android:name=".theme"
+            android:label="@string/theme"
+            android:theme="@style/stock_theme" />
+
         <activity android:name=".Settings$WirelessSettings"
             android:label="@string/header_category_wireless_networks">
             <intent-filter android:priority="5">
