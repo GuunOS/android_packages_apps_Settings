@@ -21,8 +21,8 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     android-support-v7-preference \
     android-support-v7-appcompat \
     android-support-v14-preference \
-		android.support.v7.widget.CardView \
-		android.support.design.widget \
+		android-support-v7-cardview \
+		android.support.design \
     jsr305 \
     settings-logtags \
     org.cyanogenmod.platform.internal
