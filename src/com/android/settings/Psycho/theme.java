@@ -26,6 +26,8 @@ import android.provider.Settings.Secure;
 import android.provider.Settings;
 import android.content.ContentResolver;
 
+import com.android.settings.R;
+
 public class theme extends AppCompatActivity {
 
   private int mTheme;

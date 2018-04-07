@@ -28,6 +28,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 
+import com.android.settings.R;
 /**
  * 从Dialog到Fab的变化
  * <p>

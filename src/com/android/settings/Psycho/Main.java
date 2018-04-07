@@ -25,6 +25,8 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.android.settings.R;
+
 public class Main extends AppCompatActivity {
 
     CardView card1, card2, card3, card4;

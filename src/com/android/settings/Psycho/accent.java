@@ -16,6 +16,8 @@ import android.widget.Toast;
 import android.provider.Settings.Secure;
 import android.provider.Settings;
 
+import com.android.settings.R;
+
 public class accent extends AppCompatActivity {
 
     private ViewGroup container;
