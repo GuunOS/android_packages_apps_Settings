@@ -100,7 +100,8 @@
             android:clickable="true"
             android:focusable="true"
             android:src="@drawable/ic_pallete"
-            android:tint="@android:color/white" />
+            android:tint="@android:color/white"
+            app:backgroundTint="?android:colorAccent" />
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/apply"
@@ -114,6 +115,7 @@
             android:clickable="true"
             android:focusable="true"
             android:src="@drawable/ic_theme_apply"
-            android:tint="@android:color/white" />
+            android:tint="@android:color/white"
+            app:backgroundTint="?android:colorAccent" />
 
 </RelativeLayout>

@@ -109,7 +109,7 @@ public class Main extends AppCompatActivity {
             }
             else
             {
-              upArrow.setColorFilter(R.color.text_main_dark, PorterDuff.Mode.SRC_ATOP);
+              upArrow.setColorFilter(getResources().getColor(R.color.text_main_dark), PorterDuff.Mode.SRC_ATOP);
             }
             getSupportActionBar().setHomeAsUpIndicator(upArrow);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -152,26 +152,20 @@ public class Main extends AppCompatActivity {
 
         card2 = (CardView) findViewById(R.id.card2);
         card2.setOnClickListener(new OnClickListener() {
-            public void onClick(View arg0) {
-                final Intent intent = new Intent(Intent.ACTION_MAIN, null);
-                intent.addCategory(Intent.CATEGORY_LAUNCHER);
-                final ComponentName display = new ComponentName("com.android.settings", "com.android.settings.fragments.Display");
-                intent.setComponent(display);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-            }
+          public void onClick(View arg0) {
+              Intent myIntent = new Intent(Main.this,
+                      display.class);
+              startActivity(myIntent);
+          }
         });
 
         card3 = (CardView) findViewById(R.id.card3);
         card3.setOnClickListener(new OnClickListener() {
-            public void onClick(View arg0) {
-                final Intent intent = new Intent(Intent.ACTION_MAIN, null);
-                intent.addCategory(Intent.CATEGORY_LAUNCHER);
-                final ComponentName statusbar = new ComponentName("com.android.settings", "com.android.settings.fragments.Statusbar");
-                intent.setComponent(statusbar);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-            }
+          public void onClick(View arg0) {
+              Intent myIntent = new Intent(Main.this,
+                      status.class);
+              startActivity(myIntent);
+          }
         });
 
         card4 = (CardView) findViewById(R.id.card4);

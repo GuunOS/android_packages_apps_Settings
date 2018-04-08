@@ -189,7 +189,7 @@ public class theme extends AppCompatActivity {
             }
             else
             {
-              upArrow.setColorFilter(R.color.text_main_dark, PorterDuff.Mode.SRC_ATOP);
+              upArrow.setColorFilter(getResources().getColor(R.color.text_main_dark), PorterDuff.Mode.SRC_ATOP);
             }
             getSupportActionBar().setHomeAsUpIndicator(upArrow);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -216,7 +216,6 @@ public class theme extends AppCompatActivity {
         });
 
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.Secd);
-        fab.setBackgroundColor(accent);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -227,7 +226,6 @@ public class theme extends AppCompatActivity {
         });
 
         FloatingActionButton apply = (FloatingActionButton) findViewById(R.id.apply);
-        apply.setBackgroundColor(accent);
         apply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

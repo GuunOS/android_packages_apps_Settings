@@ -132,7 +132,7 @@
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
 
-        <activity android:name=".Main"
+        <activity android:name=".Psycho.Main"
              android:theme="@style/stock_theme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -140,10 +140,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".accent"
+            android:name=".Psycho.accent"
             android:theme="@style/stock_theme.Dialog" />
         <activity
-            android:name=".theme"
+            android:name=".Psycho.theme"
             android:label="@string/theme"
             android:theme="@style/stock_theme" />
 

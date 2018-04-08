@@ -78,7 +78,7 @@
         android:strokeWidth="1" />
     <path
         android:fillAlpha="1"
-        android:fillColor="?android:colorAccent"
+        android:fillColor="?android:attr/colorAccent"
         android:pathData="M72,76h64v8h-64z"
         android:strokeAlpha="0"
         android:strokeColor="#000000"
