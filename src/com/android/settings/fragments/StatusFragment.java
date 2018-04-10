@@ -2,13 +2,15 @@ package com.android.settings.fragments;
 
 import android.os.Bundle;
 import android.preference.Preference;
-import android.preference.PreferenceFragment;
-import android.preference.Preference.OnPreferenceClickListener;
-import android.preference.Preference.OnPreferenceChangeListener;
-import android.content.ComponentName;
-import android.content.Intent;
+import android.preference.PreferenceActivity;
+import android.preference.PreferenceCategory;
+import android.preference.PreferenceScreen;
+
+import com.android.internal.logging.MetricsProto.MetricsEvent;
 
 import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
 
 
 public class StatusBar extends SettingsPreferenceFragment implements

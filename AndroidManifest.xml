@@ -147,6 +147,16 @@
             android:label="@string/theme"
             android:theme="@style/stock_theme" />
 
+        <activity
+            android:name=".Psycho.display"
+            android:label="@string/display"
+            android:theme="@style/stock_theme" />
+
+        <activity
+            android:name=".Psycho.status"
+            android:label="@string/status"
+            android:theme="@style/stock_theme" />
+
         <activity android:name=".Settings$WirelessSettings"
             android:label="@string/header_category_wireless_networks">
             <intent-filter android:priority="5">
