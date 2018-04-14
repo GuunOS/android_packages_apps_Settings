@@ -76,7 +76,7 @@ public class display extends AppCompatActivity {
                 }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.frags);
-        int accent = getAccent(accentColor, theme.this);
+        int accent = getAccent(accentColor, display.this);
 
         Toolbar toolbar5 = (Toolbar) findViewById(R.id.toolbar5);
         toolbar5.setTitle(R.string.display);

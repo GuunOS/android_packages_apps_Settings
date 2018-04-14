@@ -13,7 +13,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
 
-public class StatusBar extends SettingsPreferenceFragment implements
+public class StatusFragment extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "StatusBarTweaks";
 
