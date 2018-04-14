@@ -12,7 +12,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-public class Display extends SettingsPreferenceFragment implements
+public class DisplayFragment extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "DisplayTweaks";
 
