@@ -25,6 +25,8 @@ import android.widget.Toast;
 import android.provider.Settings.Secure;
 import android.provider.Settings;
 import android.content.ContentResolver;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 import com.android.settings.R;
 
@@ -50,7 +52,8 @@ public class theme extends AppCompatActivity {
   };
 
     private int RC_LOGIN = 100;
-    private int ui = 0;
+    private int ui;
+    private SharedPreferences sharedThe;
 
     private static int getAccent(int acc, Context context) {
       TypedArray ta = context.getResources().obtainTypedArray(R.array.tint);
@@ -113,6 +116,8 @@ public class theme extends AppCompatActivity {
                 TextView Sub2 = (TextView) findViewById(R.id.sub);
                 Sub2.setText(R.string.theme_psycho_desc);
                 Sub2.setTextColor(getResources().getColor(R.color.text_sub));
+                prev.setColorFilter(getResources().getColor(R.color.black), PorterDuff.Mode.SRC_ATOP);
+                nex.setColorFilter(getResources().getColor(R.color.black), PorterDuff.Mode.SRC_ATOP);
                 break;
             case 3:
                 final RelativeLayout rl3 = (RelativeLayout) findViewById(R.id.rl);
@@ -157,16 +162,9 @@ public class theme extends AppCompatActivity {
         setContentView(R.layout.theme);
         int accent = getAccent(accentColor, theme.this);
 
-        final RelativeLayout cl = (RelativeLayout) findViewById(R.id.container);
-        cl.setBackgroundColor(getResources().getColor(R.color.back));
-        ImageView init = (ImageView) findViewById(R.id.bg);
-        init.setImageResource(R.drawable.ic_ui_stock);
-        TextView InitText = (TextView) findViewById(R.id.head);
-        InitText.setText(R.string.theme_stock);
-        InitText.setTextColor(getResources().getColor(R.color.black));
-        TextView SubInit = (TextView) findViewById(R.id.sub);
-        SubInit.setText(R.string.theme_stock_desc);
-        SubInit.setTextColor(getResources().getColor(R.color.text_sub));
+        sharedThe = PreferenceManager.getDefaultSharedPreferences(this);
+        ui = sharedThe.getInt("themePost",0);
+        setLay(ui);
 
         Toolbar toolbar1 = (Toolbar) findViewById(R.id.toolbar4);
         setSupportActionBar(toolbar1);
@@ -206,7 +204,6 @@ public class theme extends AppCompatActivity {
         });
 
         ImageButton nex = (ImageButton) findViewById(R.id.nex);
-        prev.setColorFilter(getResources().getColor(R.color.back), PorterDuff.Mode.SRC_ATOP);
         nex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -229,6 +226,9 @@ public class theme extends AppCompatActivity {
         apply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences.Editor editor = sharedThe.edit();
+                editor.putInt("themePost",ui);
+                editor.apply();
                 switch (ui) {
                     case 0:
                         Settings.Secure.putInt(theme.this.getContentResolver(),
