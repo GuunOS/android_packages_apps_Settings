@@ -575,4 +575,9 @@
     <string name="Pink">Pink</string>
     <string name="Cyan">Cyan</string>
     <string name="Grey">Grey</string>
+
+    <!-- Psycho OTA -->
+
+    <string name="psy_ota_title">Psycho OS OTA</string>
+    <string name="psy_ota_summary">System Updates</string>
 </resources>

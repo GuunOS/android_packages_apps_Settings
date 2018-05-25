@@ -83,6 +83,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_MOD_VERSION = "mod_version";
     private static final String KEY_MOD_BUILD_DATE = "build_date";
     private static final String KEY_MOD_API_LEVEL = "mod_api_level";
+    private static final String KEY_PSYCHO_OTA = "psy_ota";
 
     static final int TAPS_TO_BE_A_DEVELOPER = 5;
 
@@ -198,6 +199,11 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         } else {
             // Remove for secondary users
             removePreference(KEY_SYSTEM_UPDATE_SETTINGS);
+        }
+
+        if (SystemProperties.get("psycho.build.type") == "UNOFFICIAL") {
+          Preference pref111 = findPreference(KEY_PSYCHO_OTA);
+          getPreferenceScreen().removePreference(pref111);
         }
 
         // Read platform settings for additional system update setting
