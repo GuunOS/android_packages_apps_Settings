@@ -577,7 +577,38 @@ public class SettingsActivity extends SettingsDrawerActivity
             getTheme().applyStyle(mTheme, true);
         }
         if (themeMode == 2) {
-            getTheme().applyStyle(R.style.settings_pixel_theme, true);
+          switch (accentColor) {
+            case 0 :
+              getTheme().applyStyle(R.style.settings_pixel_theme_teal, true);
+              break;
+            case 1 :
+              getTheme().applyStyle(R.style.settings_pixel_theme_green, true);
+              break;
+            case 2 :
+              getTheme().applyStyle(R.style.settings_pixel_theme_cyan, true);
+              break;
+            case 3 :
+              getTheme().applyStyle(R.style.settings_pixel_theme_blue, true);
+              break;
+            case 4 :
+                getTheme().applyStyle(R.style.settings_pixel_theme_yellow, true);
+                break;
+            case 5 :
+                getTheme().applyStyle(R.style.settings_pixel_theme_orange, true);
+                break;
+            case 6 :
+                getTheme().applyStyle(R.style.settings_pixel_theme_red, true);
+                break;
+            case 7 :
+                getTheme().applyStyle(R.style.settings_pixel_theme_pink, true);
+                break;
+            case 8 :
+                getTheme().applyStyle(R.style.settings_pixel_theme_purple, true);
+                break;
+            case 9 :
+                getTheme().applyStyle(R.style.settings_pixel_theme_grey, true);
+                break;
+          }
         }
         super.onCreate(savedState);
         long startTime = System.currentTimeMillis();

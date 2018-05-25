@@ -6,9 +6,9 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="320dp"
-            android:src="@drawable/psycho_logo"
-            android:scaleType="centerInside"
-            android:adjustViewBounds="true" />
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/psycho_logo" />
 
 </LinearLayout>
