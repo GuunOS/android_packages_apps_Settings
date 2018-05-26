@@ -413,7 +413,7 @@
     </style>
 
     <style name="dialog_purple" parent="@style/dialog_teal" >
-        <item name="android:colorAccent">@color/purp_accent_color</item>
+        <item name="android:colorAccent">@color/purple_accent_color</item>
     </style>
 
     <style name="dialog_grey" parent="@style/dialog_teal" >
