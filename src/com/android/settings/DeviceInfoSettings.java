@@ -292,7 +292,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
             }
         }
         else if (preference.getKey().equals(KEY_POP)) {
-          Intent t = new Intent(getApplicationContext(), pop.class);
+          Intent t = new Intent(getActivity().getApplicationContext(), pop.class);
           startActivity(t);
         }
         return super.onPreferenceTreeClick(preference);

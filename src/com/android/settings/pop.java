@@ -60,39 +60,44 @@ public class pop extends SettingsPreferenceFragment implements Indexable {
   private boolean mFunDisallowedBySystem;
 
   @Override
+  protected int getMetricsCategory() {
+      return MetricsEvent.DEVICEINFO;
+  }
+
+  @Override
   public void onCreate(Bundle pinfo) {
       final int accentColor = Secure.getInt(getContentResolver(),
               Secure.THEME_ACCENT_COLOR, 1);
                 switch (accentColor) {
                   case 0 :
-                      setTheme(R.style.dialog_teal);
+                      getActivity().setTheme(R.style.dialog_teal);
                       break;
                   case 1 :
-                      setTheme(R.style.dialog_green);
+                      getActivity().setTheme(R.style.dialog_green);
                       break;
                   case 2 :
-                      setTheme(R.style.dialog_cyan);
+                      getActivity().setTheme(R.style.dialog_cyan);
                       break;
                   case 3 :
-                      setTheme(R.style.dialog_blue);
+                      getActivity().setTheme(R.style.dialog_blue);
                       break;
                   case 4 :
-                      setTheme(R.style.dialog_yellow);
+                      getActivity().setTheme(R.style.dialog_yellow);
                       break;
                   case 5 :
-                      setTheme(R.style.dialog_orange);
+                      getActivity().setTheme(R.style.dialog_orange);
                       break;
                   case 6 :
-                      setTheme(R.style.dialog_red);
+                      getActivity().setTheme(R.style.dialog_red);
                       break;
                   case 7 :
-                      setTheme(R.style.dialog_pink);
+                      getActivity().setTheme(R.style.dialog_pink);
                       break;
                   case 8 :
-                      setTheme(R.style.dialog_purple);
+                      getActivity().setTheme(R.style.dialog_purple);
                       break;
                   case 9 :
-                      setTheme(R.style.dialog_grey);
+                      getActivity().setTheme(R.style.dialog_grey);
                       break;
                 }
       super.onCreate(pinfo);
