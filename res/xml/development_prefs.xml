@@ -165,7 +165,7 @@
         <Preference android:key="clear_adb_keys"
                 android:title="@string/clear_adb_keys" />
 
-        <com.android.settings.HostnamePreference
+        <!-- <com.android.settings.HostnamePreference
             android:key="device_hostname"
             android:title="@string/device_hostname"
             android:dialogTitle="@string/device_hostname"
@@ -174,7 +174,7 @@
             android:selectAllOnFocus="true"
             android:imeOptions="actionDone"
             android:inputType="textNoSuggestions"
-            android:persistent="false" />
+            android:persistent="false" /> -->
 
         <SwitchPreference
             android:key="enable_terminal"
