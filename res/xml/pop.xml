@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:cm="http://schemas.android.com/apk/res/cyanogenmod.platform"
+  xmlns:settings="http://schemas.android.com/apk/res-auto">
+
+  <PreferenceScreen android:key="pop_ban"
+      android:layout="@layout/pop_banner" />
+
+  <!-- Device name -->
+  <Preference android:key="device_name"
+          android:enabled="false"
+          android:shouldDisableView="false"
+          android:title="@string/device_name"
+          android:summary="@string/device_info_default"/>
+
+  <!-- Device hardware model -->
+  <com.android.settings.DividerPreference
+          android:key="device_model"
+          android:enabled="false"
+          android:shouldDisableView="false"
+          android:selectable="false"
+          android:title="@string/device_model"
+          android:summary="@string/device_info_default"
+          settings:allowDividerAbove="true"
+          settings:allowDividerBelow="true"/>
+
+  <!-- Psycho version -->
+  <Preference android:key="psycho_version"
+          android:enabled="false"
+          android:shouldDisableView="false"
+          android:title="@string/psycho_version"
+          android:summary="@string/psycho_info_default"/>
+  <!-- Change in Strings when Updating versions *sigh* -->
+
+  <!-- Device firmware version -->
+  <Preference android:key="firmware_version"
+          android:enabled="false"
+          android:shouldDisableView="false"
+          android:title="@string/firmware_version"
+          android:summary="@string/device_info_default"/>
+
+  <!-- Security patch level -->
+  <PreferenceScreen android:key="security_patch"
+          android:title="@string/security_patch"
+          android:summary="@string/device_info_default">
+          <intent android:action="android.intent.action.VIEW"
+                  android:data="https://source.android.com/security/bulletin/" />
+  </PreferenceScreen>
+
+  <!-- Build date -->
+  <com.android.settings.DividerPreference
+          android:key="build_date"
+          android:enabled="false"
+          android:selectable="false"
+          android:shouldDisableView="false"
+          android:title="@string/build_date"
+          android:summary="@string/build_date_default"
+          settings:allowDividerAbove="true"
+          settings:allowDividerBelow="true" />
+
+</PreferenceScreen>

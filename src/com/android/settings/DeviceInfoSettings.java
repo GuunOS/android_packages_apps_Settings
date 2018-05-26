@@ -63,12 +63,8 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String PROPERTY_SELINUX_STATUS = "ro.build.selinux";
     private static final String KEY_KERNEL_VERSION = "kernel_version";
     private static final String KEY_BUILD_NUMBER = "build_number";
-    private static final String KEY_DEVICE_MODEL = "device_model";
-    private static final String KEY_DEVICE_NAME = "device_name";
     private static final String KEY_SELINUX_STATUS = "selinux_status";
     private static final String KEY_BASEBAND_VERSION = "baseband_version";
-    private static final String KEY_FIRMWARE_VERSION = "firmware_version";
-    private static final String KEY_SECURITY_PATCH = "security_patch";
     private static final String KEY_UPDATE_SETTING = "additional_system_update_settings";
     private static final String KEY_EQUIPMENT_ID = "fcc_equipment_id";
     private static final String PROPERTY_EQUIPMENT_ID = "ro.ril.fccid";
@@ -80,10 +76,9 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String PROPERTY_QGP_VERSION = "persist.qgp.version";
     private static final String MBN_VERSION_PATH = "/persist/speccfg/mbnversion";
     private static final String QGP_VERSION_PATH = "/persist/speccfg/qgpversion";
-    private static final String KEY_MOD_VERSION = "mod_version";
-    private static final String KEY_MOD_BUILD_DATE = "build_date";
     private static final String KEY_MOD_API_LEVEL = "mod_api_level";
     private static final String KEY_PSYCHO_OTA = "psy_ota";
+    private static final String KEY_POP = "os_info";
 
     static final int TAPS_TO_BE_A_DEVELOPER = 5;
 
@@ -116,23 +111,10 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
 
         addPreferencesFromResource(R.xml.device_info_settings);
 
-        setStringSummary(KEY_FIRMWARE_VERSION, Build.VERSION.RELEASE);
-        findPreference(KEY_FIRMWARE_VERSION).setEnabled(true);
-
-        final String patch = DeviceInfoUtils.getSecurityPatch();
-        if (!TextUtils.isEmpty(patch)) {
-            setStringSummary(KEY_SECURITY_PATCH, patch);
-        } else {
-            getPreferenceScreen().removePreference(findPreference(KEY_SECURITY_PATCH));
-        }
-
         setValueSummary(KEY_BASEBAND_VERSION, "gsm.version.baseband");
         setValueSummary(KEY_EQUIPMENT_ID, PROPERTY_EQUIPMENT_ID);
-        setStringSummary(KEY_DEVICE_MODEL, Build.MODEL);
         setStringSummary(KEY_BUILD_NUMBER, Build.DISPLAY);
         findPreference(KEY_BUILD_NUMBER).setEnabled(true);
-        setValueSummary(KEY_MOD_VERSION, "ro.psycho.version");
-        setValueSummary(KEY_MOD_BUILD_DATE, "ro.build.date");
         //setValueSummary(KEY_QGP_VERSION, PROPERTY_QGP_VERSION);
         // Remove QGP Version if property is not present
         //removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_QGP_VERSION,
@@ -157,9 +139,6 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
             String status = getResources().getString(R.string.selinux_status_permissive);
             setStringSummary(KEY_SELINUX_STATUS, status);
         }
-
-        setStringSummary(KEY_DEVICE_NAME, Build.PRODUCT);
-        removePreferenceIfBoolFalse(KEY_DEVICE_NAME, R.bool.config_displayDeviceName);
 
         // Remove selinux information if property is not present
         removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_SELINUX_STATUS,
@@ -249,31 +228,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
-        if (preference.getKey().equals(KEY_FIRMWARE_VERSION)
-                || preference.getKey().equals(KEY_MOD_VERSION)) {
-            System.arraycopy(mHits, 1, mHits, 0, mHits.length-1);
-            mHits[mHits.length-1] = SystemClock.uptimeMillis();
-            if (mHits[0] >= (SystemClock.uptimeMillis()-500)) {
-                if (mUm.hasUserRestriction(UserManager.DISALLOW_FUN)) {
-                    if (mFunDisallowedAdmin != null && !mFunDisallowedBySystem) {
-                        RestrictedLockUtils.sendShowAdminSupportDetailsIntent(getActivity(),
-                                mFunDisallowedAdmin);
-                    }
-                    Log.d(LOG_TAG, "Sorry, no fun for you!");
-                    return false;
-                }
-
-                Intent intent = new Intent(Intent.ACTION_MAIN);
-                intent.putExtra("is_lineage", preference.getKey().equals(KEY_MOD_VERSION));
-                intent.setClassName("android",
-                        com.android.internal.app.PlatLogoActivity.class.getName());
-                try {
-                    startActivity(intent);
-                } catch (Exception e) {
-                    Log.e(LOG_TAG, "Unable to start activity " + intent.toString());
-                }
-            }
-        } else if (preference.getKey().equals(KEY_BUILD_NUMBER)) {
+        if (preference.getKey().equals(KEY_BUILD_NUMBER)) {
             // Don't enable developer options for secondary users.
             if (!mUm.isAdminUser()) return true;
 
@@ -326,13 +281,6 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
                         Toast.LENGTH_LONG);
                 mDevHitToast.show();
             }
-        } else if (preference.getKey().equals(KEY_SECURITY_PATCH)) {
-            if (getPackageManager().queryIntentActivities(preference.getIntent(), 0).isEmpty()) {
-                // Don't send out the intent to stop crash
-                Log.w(LOG_TAG, "Stop click action on " + KEY_SECURITY_PATCH + ": "
-                        + "queryIntentActivities() returns empty" );
-                return true;
-            }
         } else if (preference.getKey().equals(KEY_DEVICE_FEEDBACK)) {
             sendFeedback();
         } else if(preference.getKey().equals(KEY_SYSTEM_UPDATE_SETTINGS)) {
@@ -342,6 +290,10 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
             if (b != null && b.getBoolean(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_BOOL)) {
                 ciActionOnSysUpdate(b);
             }
+        }
+        else if (preference.getKey().equals(KEY_POP)) {
+          Intent t = new Intent(getApplicationContext(), pop.class);
+          startActivity(t);
         }
         return super.onPreferenceTreeClick(preference);
     }

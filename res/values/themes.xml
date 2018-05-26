@@ -379,4 +379,45 @@
 	      <item name="android:colorAccent">@color/grey_accent_color</item>
     </style>
 
+    <style name="dialog_teal" parent="@android:style/Theme.Material.Light.Dialog" >
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:colorAccent">@color/teal_accent_color</item>
+    </style>
+
+    <style name="dialog_green" parent="@style/dialog_teal" >
+        <item name="android:colorAccent">@color/green_accent_color</item>
+    </style>
+
+    <style name="dialog_cyan" parent="@style/dialog_teal" >
+        <item name="android:colorAccent">@color/cyan_accent_color</item>
+    </style>
+
+    <style name="dialog_blue" parent="@style/dialog_teal" >
+        <item name="android:colorAccent">@color/blue_accent_color</item>
+    </style>
+
+    <style name="dialog_yellow" parent="@style/dialog_teal" >
+        <item name="android:colorAccent">@color/yellow_accent_color</item>
+    </style>
+
+    <style name="dialog_orange" parent="@style/dialog_teal" >
+        <item name="android:colorAccent">@color/orange_accent_color</item>
+    </style>
+
+    <style name="dialog_red" parent="@style/dialog_teal" >
+        <item name="android:colorAccent">@color/red_accent_color</item>
+    </style>
+
+    <style name="dialog_pink" parent="@style/dialog_teal" >
+        <item name="android:colorAccent">@color/pink_accent_color</item>
+    </style>
+
+    <style name="dialog_purple" parent="@style/dialog_teal" >
+        <item name="android:colorAccent">@color/purp_accent_color</item>
+    </style>
+
+    <style name="dialog_grey" parent="@style/dialog_teal" >
+        <item name="android:colorAccent">@color/grey_accent_color</item>
+    </style>
+
 </resources>
