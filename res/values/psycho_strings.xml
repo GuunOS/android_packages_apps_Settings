@@ -580,7 +580,4 @@
 
     <string name="psy_ota_title">Psycho OS OTA</string>
     <string name="psy_ota_summary">System Updates</string>
-
-    <string name="os_info_head">OS Information</string>
-    <string name="os_info_sum">Information about the system</string>
 </resources>

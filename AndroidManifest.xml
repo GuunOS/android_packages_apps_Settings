@@ -1080,12 +1080,6 @@
                 android:value="true" />
         </activity>
 
-        <activity
-            android:excludeFromRecents="true"
-            android:name=".pop"
-            android:label="@string/os_info_head"
-            android:theme="@style/dialog_teal" />
-
         <activity android:name="SettingsLicenseActivity"
                 android:label="@string/settings_license_activity_title"
                 android:theme="@style/Theme.SettingsLicenseActivity"
