@@ -65,34 +65,34 @@ public class pop extends SettingsPreferenceFragment implements Indexable {
               Secure.THEME_ACCENT_COLOR, 1);
                 switch (accentColor) {
                   case 0 :
-                    getTheme().applyStyle(R.style.dialog_teal, true);
-                    break;
+                      setTheme(R.style.dialog_teal);
+                      break;
                   case 1 :
-                    getTheme().applyStyle(R.style.dialog_green, true);
-                    break;
+                      setTheme(R.style.dialog_green);
+                      break;
                   case 2 :
-                    getTheme().applyStyle(R.style.dialog_cyan, true);
-                    break;
+                      setTheme(R.style.dialog_cyan);
+                      break;
                   case 3 :
-                    getTheme().applyStyle(R.style.dialog_blue, true);
-                    break;
+                      setTheme(R.style.dialog_blue);
+                      break;
                   case 4 :
-                      getTheme().applyStyle(R.style.dialog_yellow, true);
+                      setTheme(R.style.dialog_yellow);
                       break;
                   case 5 :
-                      getTheme().applyStyle(R.style.dialog_orange, true);
+                      setTheme(R.style.dialog_orange);
                       break;
                   case 6 :
-                      getTheme().applyStyle(R.style.dialog_red, true);
+                      setTheme(R.style.dialog_red);
                       break;
                   case 7 :
-                      getTheme().applyStyle(R.style.dialog_pink, true);
+                      setTheme(R.style.dialog_pink);
                       break;
                   case 8 :
-                      getTheme().applyStyle(R.style.dialog_purple, true);
+                      setTheme(R.style.dialog_purple);
                       break;
                   case 9 :
-                      getTheme().applyStyle(R.style.dialog_grey, true);
+                      setTheme(R.style.dialog_grey);
                       break;
                 }
       super.onCreate(pinfo);
@@ -160,15 +160,6 @@ public class pop extends SettingsPreferenceFragment implements Indexable {
             Log.w(LOG_TAG, "Stop click action on " + KEY_SECURITY_PATCH + ": "
                     + "queryIntentActivities() returns empty" );
             return true;
-        }
-    } else if (preference.getKey().equals(KEY_DEVICE_FEEDBACK)) {
-        sendFeedback();
-    } else if(preference.getKey().equals(KEY_SYSTEM_UPDATE_SETTINGS)) {
-        CarrierConfigManager configManager =
-                (CarrierConfigManager) getSystemService(Context.CARRIER_CONFIG_SERVICE);
-        PersistableBundle b = configManager.getConfig();
-        if (b != null && b.getBoolean(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_BOOL)) {
-            ciActionOnSysUpdate(b);
         }
     }
     return super.onPreferenceTreeClick(preference);
