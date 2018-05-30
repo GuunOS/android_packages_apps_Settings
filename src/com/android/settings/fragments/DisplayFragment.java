@@ -22,11 +22,9 @@ import com.android.settings.Utils;
 public class DisplayFragment extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "DisplayTweaks";
-
-    private int mDeviceHardwareKeys;
     private static final String KEY_ANBI = "anbi_enabled";
 
-    private SwitchPreference mAnbiPreference;
+    private int mDeviceHardwareKeys;
 
     private SwitchPreference mAnbiPreference;
 
@@ -51,6 +49,14 @@ public class DisplayFragment extends SettingsPreferenceFragment implements
 
         if (mDeviceHardwareKeys == 0)
           prefScreen.removePreference(mAnbiPreference);
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        log("onPreferenceTreeClick: preference=" + preference);
+
+        // Let the intents be launched by the Preference manager
+        return super.onPreferenceTreeClick(preference);
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
