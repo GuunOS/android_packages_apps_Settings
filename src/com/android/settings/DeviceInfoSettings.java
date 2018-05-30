@@ -116,10 +116,9 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
 
         addPreferencesFromResource(R.xml.device_info_settings);
 
-        Resources res1234 = getActivity().getResources();
         PreferenceScreen prefScreen1234 = getPreferenceScreen();
 
-        if (SystemProperties.get("psycho.build.type") == "UNOFFICIAL") {
+        if ((SystemProperties.get("psycho.build.type")) == "UNOFFICIAL") {
           prefScreen1234.removePreference(findPreference(KEY_PSYCHO_OTA));
         }
 
