@@ -321,8 +321,8 @@
         <item name="android:actionBarStyle">@style/ActionBarLight</item>
 	      <item name="android:textColorPrimary">?android:colorAccent</item>
         <item name="android:colorPrimary">@color/pixel_primary_color</item>
-        <item name="android:colorPrimaryDark">@color/pixel_primary_color_dark</item>
-        <item name="android:statusBarColor">@color/pixel_primary_color_dark</item>
+        <item name="android:colorPrimaryDark">#e0e0e0</item>
+        <item name="android:statusBarColor">#e0e0e0</item>
         <item name="android:navigationBarColor">?android:colorAccent</item>
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:titleTextColor">?android:colorAccent</item>
