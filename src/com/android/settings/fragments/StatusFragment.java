@@ -54,7 +54,6 @@ public class StatusFragment extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
-        log("onPreferenceTreeClick: preference=" + preference);
 
         // Let the intents be launched by the Preference manager
         return super.onPreferenceTreeClick(preference);
