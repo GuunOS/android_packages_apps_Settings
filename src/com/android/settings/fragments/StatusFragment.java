@@ -39,15 +39,21 @@ public class Statusbar extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "Statusbar";
 
+    private static final String QS_EASY_TOGGLE = "qs_easy_toggle";
+
+    private SwitchPreference mQsEasyToggle;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.statusbar);
-
-        PreferenceScreen prefSet = getPreferenceScreen();
-
         final ContentResolver resolver = getActivity().getContentResolver();
+
+        mQsEasyToggle = (SwitchPreference) findPreference(QS_EASY_TOGGLE);
+        mQsEasyToggle.setChecked((Settings.Secure.getInt(resolver,
+                Settings.Secure.QS_EASY_TOGGLE, 1) == 1));
+        mQsEasyToggle.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -65,9 +71,19 @@ public class Statusbar extends SettingsPreferenceFragment implements
         super.onPause();
     }
 
+    @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
+      ContentResolver resolver = getActivity().getContentResolver();
+      if  (preference == mQsEasyToggle) {
+            boolean value = (Boolean) newValue;
+            Settings.Secure.putInt(resolver,
+                    Settings.Secure.QS_EASY_TOGGLE, value ? 1: 0);
+            return true;
+        }
+      else {
         final String key = preference.getKey();
         return true;
+      }
     }
 
 }
