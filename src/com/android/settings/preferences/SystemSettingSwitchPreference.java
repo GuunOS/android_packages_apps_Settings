@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2013 The CyanogenMod project
+ * Copyright (C) 2016 CarbonROM
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +18,7 @@
 package com.android.settings.preferences;
 
 import android.content.Context;
-import android.preference.SwitchPreference;
+import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
 import android.util.AttributeSet;
 
@@ -56,10 +57,10 @@ public class SystemSettingSwitchPreference extends SwitchPreference {
                 getKey(), defaultReturnValue ? 1 : 0) != 0;
     }
 
-    /*@Override
+    @Override
     protected boolean isPersisted() {
         // Using getString instead of getInt so we can simply check for null
         // instead of catching an exception. (All values are stored as strings.)
         return Settings.System.getString(getContext().getContentResolver(), getKey()) != null;
-    }*/
+    }
 }
