@@ -26,4 +26,10 @@
         android:title="@string/nettraffic_settings_title"
         android:summary="@string/nettraffic_settings_summary" />
 
+    <com.android.settings.preferences.SecureSettingSwitchPreference
+        android:key="qs_easy_toggle"
+        android:title="@string/qs_easy_toggle_title"
+        android:summary="@string/qs_easy_toggle_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>
