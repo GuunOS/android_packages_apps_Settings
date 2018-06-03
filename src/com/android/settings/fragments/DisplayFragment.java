@@ -10,7 +10,7 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.ListPreference;
-import android.preference.SwitchPreference;
+import android.support.v7.preference.SwitchPreferenceCompat;
 import android.provider.Settings;
 import android.provider.Settings.Secure;
 
@@ -29,7 +29,7 @@ public class DisplayFragment extends SettingsPreferenceFragment implements
     private static final String SYSTEM_DEFAULT_ANIMATION = "system_default_animation";
 
     private int mDeviceHardwareKeys;
-    private SwitchPreference mAnbiPreference;
+    private SwitchPreferenceCompat mAnbiPreference;
     private SwitchPreference mPocketJudge;
     private SwitchPreference mThreeFingerGesture;
     private SwitchPreference mSensorBlock;
@@ -52,7 +52,7 @@ public class DisplayFragment extends SettingsPreferenceFragment implements
         mDeviceHardwareKeys = res.getInteger(
                                     com.android.internal.R.integer.config_deviceHardwareKeys);
 
-        mAnbiPreference = (SwitchPreference) findPreference(ANBI_ENABLED);
+        mAnbiPreference = (SwitchPreferenceCompat) findPreference(ANBI_ENABLED);
         mAnbiPreference.setChecked((Settings.System.getInt(resolver,
                 Settings.System.ANBI_ENABLED, 1) == 1));
         mAnbiPreference.setOnPreferenceChangeListener(this);
