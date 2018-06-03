@@ -81,6 +81,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String MBN_VERSION_PATH = "/persist/speccfg/mbnversion";
     private static final String QGP_VERSION_PATH = "/persist/speccfg/qgpversion";
     private static final String KEY_MOD_VERSION = "mod_version";
+    private static final String KEY_PSYCHO_VERSION = "psycho_version";
     private static final String KEY_MOD_BUILD_DATE = "build_date";
     private static final String KEY_MOD_API_LEVEL = "mod_api_level";
     private static final String KEY_PSYCHO_OTA = "psy_ota";
@@ -249,7 +250,8 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
         if (preference.getKey().equals(KEY_FIRMWARE_VERSION)
-                || preference.getKey().equals(KEY_MOD_VERSION)) {
+                || preference.getKey().equals(KEY_MOD_VERSION)
+                || preference.getKey().equals(KEY_PSYCHO_VERSION)) {
             System.arraycopy(mHits, 1, mHits, 0, mHits.length-1);
             mHits[mHits.length-1] = SystemClock.uptimeMillis();
             if (mHits[0] >= (SystemClock.uptimeMillis()-500)) {
@@ -263,7 +265,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
                 }
 
                 Intent intent = new Intent(Intent.ACTION_MAIN);
-                intent.putExtra("is_lineage", preference.getKey().equals(KEY_MOD_VERSION));
+                intent.putExtra("is_lineage", (preference.getKey().equals(KEY_MOD_VERSION) || preference.getKey().equals(KEY_PSYCHO_VERSION)));
                 intent.setClassName("android",
                         com.android.internal.app.PlatLogoActivity.class.getName());
                 try {
