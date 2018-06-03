@@ -20,7 +20,7 @@
     <org.cyanogenmod.internal.cmparts.CMPartsPreference
         android:key="status_bar_settings" />
 
-    <SwitchPreference
+    <SwitchPreferenceCompat
         android:key="qs_easy_toggle"
         android:title="@string/qs_easy_toggle_title"
         android:summary="@string/qs_easy_toggle_summary"

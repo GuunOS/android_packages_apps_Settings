@@ -26,7 +26,7 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.ListPreference;
-import android.preference.SwitchPreference;
+import android.support.v7.preference.SwitchPreferenceCompat;
 import android.provider.Settings;
 import android.provider.Settings.Secure;
 
@@ -40,7 +40,7 @@ public class StatusFragment extends SettingsPreferenceFragment implements
     private static final String TAG = "Statusbar";
     private static final String QS_EASY_TOGGLE = "qs_easy_toggle";
 
-    private SwitchPreference mQsEasyToggle;
+    private SwitchPreferenceCompat mQsEasyToggle;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,7 +49,7 @@ public class StatusFragment extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.statusbar);
         final ContentResolver resolver = getActivity().getContentResolver();
 
-        mQsEasyToggle = (SwitchPreference) findPreference(QS_EASY_TOGGLE);
+        mQsEasyToggle = (SwitchPreferenceCompat) findPreference(QS_EASY_TOGGLE);
         mQsEasyToggle.setChecked((Settings.Secure.getInt(resolver,
                 Settings.Secure.QS_EASY_TOGGLE, 1) == 1));
         mQsEasyToggle.setOnPreferenceChangeListener(this);
@@ -71,7 +71,7 @@ public class StatusFragment extends SettingsPreferenceFragment implements
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
       ContentResolver resolver = getActivity().getContentResolver();
       if  (preference == mQsEasyToggle) {
             boolean value = (Boolean) newValue;
