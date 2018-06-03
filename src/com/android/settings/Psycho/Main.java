@@ -89,7 +89,7 @@ public class Main extends AppCompatActivity {
               getTheme().applyStyle(R.style.pixel_theme_cyan, true);
               break;
             case 3 :
-              getTheme().applyStyle(R.style.spixel_theme_blue, true);
+              getTheme().applyStyle(R.style.pixel_theme_blue, true);
               break;
             case 4 :
                 getTheme().applyStyle(R.style.pixel_theme_yellow, true);

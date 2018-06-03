@@ -26,7 +26,7 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.ListPreference;
-import android.support.v7.preference.SwitchPreference;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.provider.Settings.Secure;
 
@@ -35,7 +35,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.Utils;
 
-public class Statusbar extends SettingsPreferenceFragment implements
+public class StatusFragment extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "Statusbar";
     private static final String QS_EASY_TOGGLE = "qs_easy_toggle";
