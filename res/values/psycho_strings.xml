@@ -597,10 +597,6 @@
     <string name="sensor_block_title">Sensor block per-package</string>
     <string name="sensor_block_summary">Block access to certain sensors for some apps to save battery.</string>
 
-    <!-- Quick unlock -->
-    <string name="unlock_quick_unlock_control_title">Quick unlock</string>
-    <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN is entered\nNote: will only work for 4 digit PIN !</string>
-
     <!-- System default animation -->
     <string name="system_default_animation_title">Android P animation style</string>
     <string name="system_default_animation_summary">Enable Android P \"Default\" animations</string>
