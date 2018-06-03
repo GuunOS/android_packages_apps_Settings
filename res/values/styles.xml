@@ -491,20 +491,56 @@
         <!--<item name="android:windowContentTransitions">true</item>-->
     </style>
 
-    <style name="pixel_theme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="pixel_theme_teal" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="android:windowLightStatusBar">true</item>
-        <item name="android:navigationBarColor">@color/colorAccent</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/teal_accent_color</item>
+        <item name="colorPrimaryDark">#868686</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">?android:colorAccent</item>
         <item name="preferenceTheme">@style/PrefsTheme</item>
     </style>
 
-    <style name="pixel_theme.Dialog" parent="pixel_theme">
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowBackground">@color/dialog_background_scrim</item>
-        <!--<item name="android:windowAnimationStyle">@null</item>-->
-        <!--<item name="android:windowContentTransitions">true</item>-->
+    <style name="pixel_theme_blue" parent="@style/pixel_theme_teal">
+      <item name="colorAccent">@color/blue_accent_color</item>
+    </style>
+
+    <style name="pixel_theme_red" parent="@style/pixel_theme_teal">
+      <item name="colorAccent">@color/red_accent_color</item>
+    </style>
+
+    <style name="pixel_theme_orange" parent="@style/pixel_theme_teal">
+      <item name="colorAccent">@color/orange_accent_color</item>
+    </style>
+
+    <style name="pixel_theme_green" parent="@style/pixel_theme_teal">
+      <item name="colorAccent">@color/green_accent_color</item>
+    </style>
+
+    <style name="pixel_theme_yellow" parent="@style/pixel_theme_teal">
+      <item name="colorAccent">@color/yellow_accent_color</item>
+    </style>
+
+    <style name="pixel_theme_purple" parent="@style/pixel_theme_teal">
+      <item name="colorAccent">@color/purple_accent_color</item>
+    </style>
+
+    <style name="pixel_theme_pink" parent="@style/pixel_theme_teal">
+      <item name="colorAccent">@color/pink_accent_color</item>
+    </style>
+
+    <style name="pixel_theme_cyan" parent="@style/pixel_theme_teal">
+      <item name="colorAccent">@color/cyan_accent_color</item>
+    </style>
+
+    <style name="pixel_theme_grey" parent="@style/pixel_theme_teal">
+      <item name="colorAccent">@color/grey_accent_color</item>
+    </style>
+
+    <style name="pixel_theme.Dialog" parent="@style/pixel_theme_blue">
+      <item name="android:windowIsTranslucent">true</item>
+      <item name="android:windowBackground">@color/dialog_background_scrim</item>
+      <!--<item name="android:windowAnimationStyle">@null</item>-->
+      <!--<item name="android:windowContentTransitions">true</item>-->
     </style>
 
 </resources>
