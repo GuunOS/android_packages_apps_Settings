@@ -73,8 +73,8 @@ public class DisplayFragment extends SettingsPreferenceFragment implements
         mSensorBlock.setOnPreferenceChangeListener(this);
 
         mSystemDefaultAnimation = (SwitchPreferenceCompat) findPreference(SYSTEM_DEFAULT_ANIMATION);
-        mSystemDefaultAnimation.setChecked((Settings.System.getInt(resolver,
-                Settings.System.SYSTEM_DEFAULT_ANIMATION, 1) == 1));
+        mSystemDefaultAnimation.setChecked((Settings.Global.getInt(resolver,
+                Settings.Global.SYSTEM_DEFAULT_ANIMATION, 1) == 1));
         mSystemDefaultAnimation.setOnPreferenceChangeListener(this);
 
         if (mDeviceHardwareKeys == 0)
@@ -91,7 +91,7 @@ public class DisplayFragment extends SettingsPreferenceFragment implements
         super.onPause();
     }
 
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
       ContentResolver resolver = getActivity().getContentResolver();
       if (preference == mAnbiPreference) {
         boolean value = (Boolean) newValue;
@@ -116,7 +116,7 @@ public class DisplayFragment extends SettingsPreferenceFragment implements
       } else if (preference == mSystemDefaultAnimation) {
         boolean value = (Boolean) newValue;
         Settings.System.putInt(resolver,
-                Settings.System.SYSTEM_DEFAULT_ANIMATION, value ? 1: 0);
+                Settings.Global.SYSTEM_DEFAULT_ANIMATION, value ? 1: 0);
         return true;
       } else {
         final String key = preference.getKey();
