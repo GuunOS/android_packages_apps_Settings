@@ -30,10 +30,10 @@ public class DisplayFragment extends SettingsPreferenceFragment implements
 
     private int mDeviceHardwareKeys;
     private SwitchPreferenceCompat mAnbiPreference;
-    private SwitchPreference mPocketJudge;
-    private SwitchPreference mThreeFingerGesture;
-    private SwitchPreference mSensorBlock;
-    private SwitchPreference mSystemDefaultAnimation;
+    private SwitchPreferenceCompat mPocketJudge;
+    private SwitchPreferenceCompat mThreeFingerGesture;
+    private SwitchPreferenceCompat mSensorBlock;
+    private SwitchPreferenceCompat mSystemDefaultAnimation;
 
     @Override
     protected int getMetricsCategory() {
@@ -57,22 +57,22 @@ public class DisplayFragment extends SettingsPreferenceFragment implements
                 Settings.System.ANBI_ENABLED, 1) == 1));
         mAnbiPreference.setOnPreferenceChangeListener(this);
 
-        mPocketJudge = (SwitchPreference) findPreference(POCKET_JUDGE);
+        mPocketJudge = (SwitchPreferenceCompat) findPreference(POCKET_JUDGE);
         mPocketJudge.setChecked((Settings.System.getInt(resolver,
                 Settings.System.POCKET_JUDGE, 1) == 1));
         mPocketJudge.setOnPreferenceChangeListener(this);
 
-        mThreeFingerGesture = (SwitchPreference) findPreference(THREE_FINGER_GESTURE);
+        mThreeFingerGesture = (SwitchPreferenceCompat) findPreference(THREE_FINGER_GESTURE);
         mThreeFingerGesture.setChecked((Settings.System.getInt(resolver,
                 Settings.System.THREE_FINGER_GESTURE, 1) == 1));
         mThreeFingerGesture.setOnPreferenceChangeListener(this);
 
-        mSensorBlock = (SwitchPreference) findPreference(SENSOR_BLOCK);
+        mSensorBlock = (SwitchPreferenceCompat) findPreference(SENSOR_BLOCK);
         mSensorBlock.setChecked((Settings.System.getInt(resolver,
                 Settings.System.SENSOR_BLOCK, 1) == 1));
         mSensorBlock.setOnPreferenceChangeListener(this);
 
-        mSystemDefaultAnimation = (SwitchPreference) findPreference(SYSTEM_DEFAULT_ANIMATION);
+        mSystemDefaultAnimation = (SwitchPreferenceCompat) findPreference(SYSTEM_DEFAULT_ANIMATION);
         mSystemDefaultAnimation.setChecked((Settings.System.getInt(resolver,
                 Settings.System.SYSTEM_DEFAULT_ANIMATION, 1) == 1));
         mSystemDefaultAnimation.setOnPreferenceChangeListener(this);
