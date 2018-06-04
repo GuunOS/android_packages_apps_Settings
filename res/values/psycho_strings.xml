@@ -43,7 +43,7 @@
     <string name="root_appops_summary">View and control the root rules</string>
 
     <string name="psycho_version">Psycho OS Version</string>
-    <string name="psycho_info_default">0.2 beta</string>
+    <string name="psycho_info_default">0.3 beta</string>
 
     <!-- About phone screen, Device model -->
     <string name="device_model">Device model</string>
