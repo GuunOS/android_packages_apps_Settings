@@ -114,7 +114,7 @@ public class DisplayFragment extends SettingsPreferenceFragment implements
         return true;
       } else if (preference == mSystemDefaultAnimation) {
         boolean value = (Boolean) newValue;
-        Settings.System.putInt(resolver,
+        Settings.Global.putInt(resolver,
                 Settings.Global.SYSTEM_DEFAULT_ANIMATION, value ? 1: 0);
         return true;
       } else {
