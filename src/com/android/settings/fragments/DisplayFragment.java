@@ -5,12 +5,11 @@ import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
-import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
+import android.support.v14.preference.SwitchPreference;
+import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
-import android.support.v7.preference.ListPreference;
-import android.support.v7.preference.SwitchPreferenceCompat;
 import android.provider.Settings;
 import android.provider.Settings.Secure;
 
@@ -29,11 +28,11 @@ public class DisplayFragment extends SettingsPreferenceFragment implements
     private static final String SYSTEM_DEFAULT_ANIMATION = "system_default_animation";
 
     private int mDeviceHardwareKeys;
-    private SwitchPreferenceCompat mAnbiPreference;
-    private SwitchPreferenceCompat mPocketJudge;
-    private SwitchPreferenceCompat mThreeFingerGesture;
-    private SwitchPreferenceCompat mSensorBlock;
-    private SwitchPreferenceCompat mSystemDefaultAnimation;
+    private SwitchPreference mAnbiPreference;
+    private SwitchPreference mPocketJudge;
+    private SwitchPreference mThreeFingerGesture;
+    private SwitchPreference mSensorBlock;
+    private SwitchPreference mSystemDefaultAnimation;
 
     @Override
     protected int getMetricsCategory() {
@@ -52,27 +51,27 @@ public class DisplayFragment extends SettingsPreferenceFragment implements
         mDeviceHardwareKeys = res.getInteger(
                                     com.android.internal.R.integer.config_deviceHardwareKeys);
 
-        mAnbiPreference = (SwitchPreferenceCompat) findPreference(ANBI_ENABLED);
+        mAnbiPreference = (SwitchPreference) findPreference(ANBI_ENABLED);
         mAnbiPreference.setChecked((Settings.System.getInt(resolver,
                 Settings.System.ANBI_ENABLED, 1) == 1));
         mAnbiPreference.setOnPreferenceChangeListener(this);
 
-        mPocketJudge = (SwitchPreferenceCompat) findPreference(POCKET_JUDGE);
+        mPocketJudge = (SwitchPreference) findPreference(POCKET_JUDGE);
         mPocketJudge.setChecked((Settings.System.getInt(resolver,
                 Settings.System.POCKET_JUDGE, 1) == 1));
         mPocketJudge.setOnPreferenceChangeListener(this);
 
-        mThreeFingerGesture = (SwitchPreferenceCompat) findPreference(THREE_FINGER_GESTURE);
+        mThreeFingerGesture = (SwitchPreference) findPreference(THREE_FINGER_GESTURE);
         mThreeFingerGesture.setChecked((Settings.System.getInt(resolver,
                 Settings.System.THREE_FINGER_GESTURE, 1) == 1));
         mThreeFingerGesture.setOnPreferenceChangeListener(this);
 
-        mSensorBlock = (SwitchPreferenceCompat) findPreference(SENSOR_BLOCK);
+        mSensorBlock = (SwitchPreference) findPreference(SENSOR_BLOCK);
         mSensorBlock.setChecked((Settings.System.getInt(resolver,
                 Settings.System.SENSOR_BLOCK, 1) == 1));
         mSensorBlock.setOnPreferenceChangeListener(this);
 
-        mSystemDefaultAnimation = (SwitchPreferenceCompat) findPreference(SYSTEM_DEFAULT_ANIMATION);
+        mSystemDefaultAnimation = (SwitchPreference) findPreference(SYSTEM_DEFAULT_ANIMATION);
         mSystemDefaultAnimation.setChecked((Settings.Global.getInt(resolver,
                 Settings.Global.SYSTEM_DEFAULT_ANIMATION, 1) == 1));
         mSystemDefaultAnimation.setOnPreferenceChangeListener(this);
