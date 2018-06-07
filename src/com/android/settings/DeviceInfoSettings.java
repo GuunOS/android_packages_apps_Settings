@@ -100,8 +100,6 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private boolean mDebuggingFeaturesDisallowedBySystem;
     private IRegionalizationService mRegionalizationService = null;
 
-    final Activity act = getActivity();
-
     @Override
     protected int getMetricsCategory() {
         return MetricsEvent.DEVICEINFO;
@@ -177,6 +175,8 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
          * Settings is a generic app and should not contain any device-specific
          * info.
          */
+
+        final Activity act = getActivity();
 
         // These are contained by the root preference screen
         PreferenceGroup parentPreference = getPreferenceScreen();
@@ -296,7 +296,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
                 ciActionOnSysUpdate(b);
             }
         } else if (preference.getKey().equals(KEY_POP)) {
-          final AlertDialog.Builder builder = new AlertDialog.Builder(act);
+          final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
           final View diagContent = LayoutInflater.from(builder.getContext()).inflate(R.layout.info_diag, null);
           TextView dev_name = (TextView) diagContent.findViewById(R.id.device_name_pop);
           TextView psycho_version = (TextView) diagContent.findViewById(R.id.psych_version);
