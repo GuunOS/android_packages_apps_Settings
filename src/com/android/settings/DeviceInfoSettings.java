@@ -35,6 +35,11 @@ import android.telephony.CarrierConfigManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
+import android.app.AlertDialog;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.dashboard.SummaryLoader;
@@ -63,12 +68,9 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String PROPERTY_SELINUX_STATUS = "ro.build.selinux";
     private static final String KEY_KERNEL_VERSION = "kernel_version";
     private static final String KEY_BUILD_NUMBER = "build_number";
-    private static final String KEY_DEVICE_MODEL = "device_model";
     private static final String KEY_DEVICE_NAME = "device_name";
     private static final String KEY_SELINUX_STATUS = "selinux_status";
     private static final String KEY_BASEBAND_VERSION = "baseband_version";
-    private static final String KEY_FIRMWARE_VERSION = "firmware_version";
-    private static final String KEY_SECURITY_PATCH = "security_patch";
     private static final String KEY_UPDATE_SETTING = "additional_system_update_settings";
     private static final String KEY_EQUIPMENT_ID = "fcc_equipment_id";
     private static final String PROPERTY_EQUIPMENT_ID = "ro.ril.fccid";
@@ -80,10 +82,9 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String PROPERTY_QGP_VERSION = "persist.qgp.version";
     private static final String MBN_VERSION_PATH = "/persist/speccfg/mbnversion";
     private static final String QGP_VERSION_PATH = "/persist/speccfg/qgpversion";
-    private static final String KEY_MOD_VERSION = "mod_version";
-    private static final String KEY_MOD_BUILD_DATE = "build_date";
     private static final String KEY_MOD_API_LEVEL = "mod_api_level";
     private static final String KEY_PSYCHO_OTA = "psy_ota";
+    private static final String KEY_POP = "os_info";
 
     static final int TAPS_TO_BE_A_DEVELOPER = 5;
 
@@ -98,6 +99,8 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private EnforcedAdmin mDebuggingFeaturesDisallowedAdmin;
     private boolean mDebuggingFeaturesDisallowedBySystem;
     private IRegionalizationService mRegionalizationService = null;
+
+    final Activity act = getActivity();
 
     @Override
     protected int getMetricsCategory() {
@@ -116,27 +119,10 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
 
         addPreferencesFromResource(R.xml.device_info_settings);
 
-        if ((SystemProperties.get("psycho.build.type")) == "UNOFFICIAL") {
-          getPreferenceScreen().removePreference(findPreference(KEY_PSYCHO_OTA));
-        }
-
-        setStringSummary(KEY_FIRMWARE_VERSION, Build.VERSION.RELEASE);
-        findPreference(KEY_FIRMWARE_VERSION).setEnabled(true);
-
-        final String patch = DeviceInfoUtils.getSecurityPatch();
-        if (!TextUtils.isEmpty(patch)) {
-            setStringSummary(KEY_SECURITY_PATCH, patch);
-        } else {
-            getPreferenceScreen().removePreference(findPreference(KEY_SECURITY_PATCH));
-        }
-
         setValueSummary(KEY_BASEBAND_VERSION, "gsm.version.baseband");
         setValueSummary(KEY_EQUIPMENT_ID, PROPERTY_EQUIPMENT_ID);
-        setStringSummary(KEY_DEVICE_MODEL, Build.MODEL);
         setStringSummary(KEY_BUILD_NUMBER, Build.DISPLAY);
         findPreference(KEY_BUILD_NUMBER).setEnabled(true);
-        setValueSummary(KEY_MOD_VERSION, "ro.psycho.version");
-        setValueSummary(KEY_MOD_BUILD_DATE, "ro.build.date");
         //setValueSummary(KEY_QGP_VERSION, PROPERTY_QGP_VERSION);
         // Remove QGP Version if property is not present
         //removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_QGP_VERSION,
@@ -191,7 +177,6 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
          * Settings is a generic app and should not contain any device-specific
          * info.
          */
-        final Activity act = getActivity();
 
         // These are contained by the root preference screen
         PreferenceGroup parentPreference = getPreferenceScreen();
@@ -248,31 +233,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
-        if (preference.getKey().equals(KEY_FIRMWARE_VERSION)
-                || preference.getKey().equals(KEY_MOD_VERSION)) {
-            System.arraycopy(mHits, 1, mHits, 0, mHits.length-1);
-            mHits[mHits.length-1] = SystemClock.uptimeMillis();
-            if (mHits[0] >= (SystemClock.uptimeMillis()-500)) {
-                if (mUm.hasUserRestriction(UserManager.DISALLOW_FUN)) {
-                    if (mFunDisallowedAdmin != null && !mFunDisallowedBySystem) {
-                        RestrictedLockUtils.sendShowAdminSupportDetailsIntent(getActivity(),
-                                mFunDisallowedAdmin);
-                    }
-                    Log.d(LOG_TAG, "Sorry, no fun for you!");
-                    return false;
-                }
-
-                Intent intent = new Intent(Intent.ACTION_MAIN);
-                intent.putExtra("is_lineage", preference.getKey().equals(KEY_MOD_VERSION));
-                intent.setClassName("android",
-                        com.android.internal.app.PlatLogoActivity.class.getName());
-                try {
-                    startActivity(intent);
-                } catch (Exception e) {
-                    Log.e(LOG_TAG, "Unable to start activity " + intent.toString());
-                }
-            }
-        } else if (preference.getKey().equals(KEY_BUILD_NUMBER)) {
+        if (preference.getKey().equals(KEY_BUILD_NUMBER)) {
             // Don't enable developer options for secondary users.
             if (!mUm.isAdminUser()) return true;
 
@@ -325,13 +286,6 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
                         Toast.LENGTH_LONG);
                 mDevHitToast.show();
             }
-        } else if (preference.getKey().equals(KEY_SECURITY_PATCH)) {
-            if (getPackageManager().queryIntentActivities(preference.getIntent(), 0).isEmpty()) {
-                // Don't send out the intent to stop crash
-                Log.w(LOG_TAG, "Stop click action on " + KEY_SECURITY_PATCH + ": "
-                        + "queryIntentActivities() returns empty" );
-                return true;
-            }
         } else if (preference.getKey().equals(KEY_DEVICE_FEEDBACK)) {
             sendFeedback();
         } else if(preference.getKey().equals(KEY_SYSTEM_UPDATE_SETTINGS)) {
@@ -341,6 +295,58 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
             if (b != null && b.getBoolean(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_BOOL)) {
                 ciActionOnSysUpdate(b);
             }
+        } else if (preference.getKey().equals(KEY_POP)) {
+          final AlertDialog.Builder builder = new AlertDialog.Builder(act);
+          final View diagContent = LayoutInflater.from(builder.getContext()).inflate(R.layout.info_diag, null);
+          TextView dev_name = diagContent.findViewById(R.id.device_name_pop);
+          TextView psycho_version = diagContent.findViewById(R.id.psych_version);
+          TextView android_version = diagContent.findViewById(R.id.device_android_ver);
+          TextView security_patch_date = diagContent.findViewById(R.id.security_patch_date);
+          TextView build_date = diagContent.findViewById(R.id.build_date_date);
+          dev_name.setText(SystemProperties.get("ro.product.model"));
+          psycho_version.setText(SystemProperties.get("ro.psycho.build.version"));
+          android_version.setText(SystemProperties.get("ro.build.version.release"));
+          security_patch_date.setText(SystemProperties.get("ro.build.version.security_patch"));
+          build_date.setText(SystemProperties.get("ro.build.date"));
+          LinearLayout psycho_layout = diagContent.findViewById(R.id.psycho_layout);
+          LinearLayout android_layout = diagContent.findViewById(R.id.firmware_info_layout);
+          psycho_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              System.arraycopy(mHits, 1, mHits, 0, mHits.length-1);
+              mHits[mHits.length-1] = SystemClock.uptimeMillis();
+              if (mHits[0] >= (SystemClock.uptimeMillis()-500)) {
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.putExtra("is_lineage", true);
+                intent.setClassName("android",
+                        com.android.internal.app.PlatLogoActivity.class.getName());
+                try {
+                    startActivity(intent);
+                } catch (Exception e) {
+                    Log.e(LOG_TAG, "Unable to start activity " + intent.toString());
+                }
+              }
+            }
+          }
+          android_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              System.arraycopy(mHits, 1, mHits, 0, mHits.length-1);
+              mHits[mHits.length-1] = SystemClock.uptimeMillis();
+              if (mHits[0] >= (SystemClock.uptimeMillis()-500)) {
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.putExtra("is_lineage", false);
+                intent.setClassName("android",
+                        com.android.internal.app.PlatLogoActivity.class.getName());
+                try {
+                    startActivity(intent);
+                } catch (Exception e) {
+                    Log.e(LOG_TAG, "Unable to start activity " + intent.toString());
+                }
+              }
+            }
+          }
+          builder.setView(diagContent).show();
         }
         return super.onPreferenceTreeClick(preference);
     }

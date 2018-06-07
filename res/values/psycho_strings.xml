@@ -504,6 +504,11 @@
     <string name="burnin_protection_title">Display burn-in protection</string>
     <string name="burnin_protection_summary">Periodically move items that are permanently shown on screen to avoid excessive screen wear in that area</string>
 
+
+    <!-- Pop Up Info -->
+    <string name="os_info_head">OS Information</string>
+    <string name="os_info_sum">Information about the system</string>
+
     <!-- Color engine -->
     <string name="theme_switch_palette">Switch between primary and accent colors</string>
     <string name="theme_title">Color engine</string>
@@ -577,7 +582,6 @@
     <string name="Grey">Grey</string>
 
     <!-- Psycho OTA -->
-
     <string name="psy_ota_title">Psycho OS OTA</string>
     <string name="psy_ota_summary">System Updates</string>
 
