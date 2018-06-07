@@ -298,18 +298,18 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         } else if (preference.getKey().equals(KEY_POP)) {
           final AlertDialog.Builder builder = new AlertDialog.Builder(act);
           final View diagContent = LayoutInflater.from(builder.getContext()).inflate(R.layout.info_diag, null);
-          TextView dev_name = diagContent.findViewById(R.id.device_name_pop);
-          TextView psycho_version = diagContent.findViewById(R.id.psych_version);
-          TextView android_version = diagContent.findViewById(R.id.device_android_ver);
-          TextView security_patch_date = diagContent.findViewById(R.id.security_patch_date);
-          TextView build_date = diagContent.findViewById(R.id.build_date_date);
+          TextView dev_name = (TextView) diagContent.findViewById(R.id.device_name_pop);
+          TextView psycho_version = (TextView) diagContent.findViewById(R.id.psych_version);
+          TextView android_version =  (TextView) diagContent.findViewById(R.id.device_android_ver);
+          TextView security_patch_date = (TextView) diagContent.findViewById(R.id.security_patch_date);
+          TextView build_date = (TextView) diagContent.findViewById(R.id.build_date_date);
           dev_name.setText(SystemProperties.get("ro.product.model"));
           psycho_version.setText(SystemProperties.get("ro.psycho.build.version"));
           android_version.setText(SystemProperties.get("ro.build.version.release"));
           security_patch_date.setText(SystemProperties.get("ro.build.version.security_patch"));
           build_date.setText(SystemProperties.get("ro.build.date"));
-          LinearLayout psycho_layout = diagContent.findViewById(R.id.psycho_layout);
-          LinearLayout android_layout = diagContent.findViewById(R.id.firmware_info_layout);
+          LinearLayout psycho_layout = (LinearLayout) diagContent.findViewById(R.id.psycho_layout);
+          LinearLayout android_layout = (LinearLayout) diagContent.findViewById(R.id.firmware_info_layout);
           psycho_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
