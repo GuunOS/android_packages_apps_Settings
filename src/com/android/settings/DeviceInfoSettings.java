@@ -327,7 +327,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
                 }
               }
             }
-          }
+          });
           android_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -345,7 +345,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
                 }
               }
             }
-          }
+          });
           builder.setView(diagContent).show();
         }
         return super.onPreferenceTreeClick(preference);
