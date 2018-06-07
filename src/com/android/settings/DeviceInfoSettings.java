@@ -300,7 +300,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
           final View diagContent = LayoutInflater.from(builder.getContext()).inflate(R.layout.info_diag, null);
           TextView dev_name = (TextView) diagContent.findViewById(R.id.device_name_pop);
           TextView psycho_version = (TextView) diagContent.findViewById(R.id.psych_version);
-          TextView android_version =  (TextView) diagContent.findViewById(R.id.device_android_ver);
+          TextView android_version =  (TextView) diagContent.findViewById(R.id.device_android_vers);
           TextView security_patch_date = (TextView) diagContent.findViewById(R.id.security_patch_date);
           TextView build_date = (TextView) diagContent.findViewById(R.id.build_date_date);
           dev_name.setText(SystemProperties.get("ro.product.model"));
