@@ -23,6 +23,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
+import android.content.SharedPreferences;
 import android.widget.Toast;
 
 import com.android.settings.R;
@@ -33,6 +34,8 @@ public class Main extends AppCompatActivity {
     int east;
 
     private int mTheme;
+    private SharedPreferences funHint;
+    private int hint;
 
     private ThemeManager mThemeManager;
     private final IThemeCallback mThemeCallback = new IThemeCallback.Stub() {
@@ -118,6 +121,20 @@ public class Main extends AppCompatActivity {
         east = 0;
         setContentView(R.layout.main);
         int accent = getAccent(accentColor, Main.this);
+        funHint = PreferenceManager.getDefaultSharedPreferences(this);
+        hint = funHint.getInt("hintFun",0);
+        if (hint < 32) {
+          hint++;
+        }
+        if (hint == 10) {
+          Toast.makeText(Main.this, "psst, Did you tried tapping everywhere?", Toast.LENGTH_SHORT).show();
+        }
+        if (hint == 20) {
+          Toast.makeText(Main.this, "Tap logo repeatedly for nothing...", Toast.LENGTH_SHORT).show();
+        }
+        if (hint == 30) {
+          Toast.makeText(Main.this, "Ignore other things and keeping tapping on logo.", Toast.LENGTH_SHORT).show();
+        }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -168,9 +185,14 @@ public class Main extends AppCompatActivity {
                     animationDrawable.setExitFadeDuration(4000);
                     animationDrawable.start();
                     Toast.makeText(Main.this, "You Broke It. Happy Now?", Toast.LENGTH_LONG).show();
+                    hint = 420;
                 }
             }
         });
+
+        SharedPreferences.Editor editor = funHint.edit();
+        editor.putInt("hintFun",hint);
+        editor.apply();
 
         card1 = (CardView) findViewById(R.id.card1);
         card1.setOnClickListener(new OnClickListener() {
