@@ -36,6 +36,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -346,7 +347,10 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
               }
             }
           });
-          builder.setView(diagContent).show();
+          builder.setView(diagContent);
+          Dialog infDiag = builder.create();
+          infDiag.getWindow().setBackgroundDrawableResource(R.drawable.diag_back);
+          infDiag.show();
         }
         return super.onPreferenceTreeClick(preference);
     }
