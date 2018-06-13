@@ -32,6 +32,16 @@
                 android:targetClass="com.ota.updates.activities.MainActivity" />
         </Preference>
 
+        <Preference
+        		    android:key="psy_suggest"
+        				android:title="@string/psy_suggest_title"
+        				android:summary="@string/psy_suggest_summary">
+        		<intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.psycho.mods.sugestions"
+                android:targetClass="com.psycho.mods.sugestions.SuggestPsycho" />
+        </Preference>
+
         <!-- System update settings - launches activity -->
         <PreferenceScreen android:key="system_update_settings"
                 android:title="@string/system_update_settings_list_item_title"
