@@ -101,6 +101,8 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private boolean mDebuggingFeaturesDisallowedBySystem;
     private IRegionalizationService mRegionalizationService = null;
 
+    final String patch;
+
     @Override
     protected int getMetricsCategory() {
         return MetricsEvent.DEVICEINFO;
@@ -117,6 +119,8 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         mUm = UserManager.get(getActivity());
 
         addPreferencesFromResource(R.xml.device_info_settings);
+
+        patch = DeviceInfoUtils.getSecurityPatch();
 
         setValueSummary(KEY_BASEBAND_VERSION, "gsm.version.baseband");
         setValueSummary(KEY_EQUIPMENT_ID, PROPERTY_EQUIPMENT_ID);
@@ -307,7 +311,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
           dev_name.setText(SystemProperties.get("ro.product.model"));
           psycho_version.setText(SystemProperties.get("ro.psycho.build.version"));
           android_version.setText(SystemProperties.get("ro.build.version.release"));
-          security_patch_date.setText(SystemProperties.get("ro.build.version.security_patch"));
+          security_patch_date.setText(patch);
           build_date.setText(SystemProperties.get("ro.build.date"));
           LinearLayout psycho_layout = (LinearLayout) diagContent.findViewById(R.id.psycho_layout);
           LinearLayout android_layout = (LinearLayout) diagContent.findViewById(R.id.firmware_info_layout);
