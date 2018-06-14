@@ -613,4 +613,6 @@
     <string name="psy_suggest_title">Suggestions</string>
     <string name="psy_suggest_summary">Send us your feedback here</string>
 
+    <string name="psyc_os">Psycho OS</string>
+
 </resources>
