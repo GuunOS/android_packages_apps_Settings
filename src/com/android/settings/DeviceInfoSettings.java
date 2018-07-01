@@ -101,7 +101,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private boolean mDebuggingFeaturesDisallowedBySystem;
     private IRegionalizationService mRegionalizationService = null;
 
-    final String patch;
+    private String patch;
 
     @Override
     protected int getMetricsCategory() {
