@@ -148,6 +148,7 @@ import java.util.List;
 import java.util.Set;
 
 import com.android.settings.Psycho.PsychoTweaksStart;
+import com.android.settings.Psycho.AmbientSettings;
 
 public class SettingsActivity extends SettingsDrawerActivity
         implements PreferenceManager.OnPreferenceTreeClickListener,
@@ -382,6 +383,7 @@ public class SettingsActivity extends SettingsDrawerActivity
             ManageDomainUrls.class.getName(),
             AutomaticStorageManagerSettings.class.getName(),
             PsychoTweaksStart.class.getName(),
+            AmbientSettings.class.getName(),
     };
 
 
