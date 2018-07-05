@@ -652,4 +652,8 @@
     <string name="doze_notification_color_invert_summary_off">Notifications will not be inverted. Use for dark themes.</string>
     <string name="doze_notification_color_invert_summary_on">Notifications will be inverted. Use for light/stock theme.</string>
 
+    <!-- Quick unlock -->
+    <string name="unlock_quick_unlock_control_title">Quick unlock</string>
+    <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN is entered\nNote: Only for 4 digit PINs !</string>
+
 </resources>
