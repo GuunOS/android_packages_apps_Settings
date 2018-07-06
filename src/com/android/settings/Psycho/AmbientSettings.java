@@ -1,4 +1,4 @@
-package com.android.settings.aicp;
+package com.android.settings.Psycho;
 
 import android.app.Activity;
 import android.app.AlertDialog;

@@ -98,6 +98,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     private static final String KEY_WALLPAPER = "wallpaper";
     private static final String KEY_VR_DISPLAY_PREF = "vr_display_pref";
+
     private static final String KEY_DOZE_FRAGMENT = "doze_fragment";
 
     private Preference mFontSizePref;
@@ -400,7 +401,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (mTapToWakePreference != null) {
             int value = Settings.Secure.getInt(getContentResolver(), DOUBLE_TAP_TO_WAKE, 0);
             mTapToWakePreference.setChecked(value != 0);
-        }private void updateFontSizeSummary() {
+        }
 
         // Update camera gesture #1 if it is available.
         if (mCameraGesturePreference != null) {
@@ -513,6 +514,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
+
         return super.onPreferenceTreeClick(preference);
     }
 
