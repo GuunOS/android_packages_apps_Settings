@@ -36,9 +36,11 @@ public class AmbientSettings extends SettingsPreferenceFragment
     private static final String KEY_DOZE_PULSE_VISIBLE = "doze_pulse_visible";
     private static final String KEY_DOZE_PULSE_OUT = "doze_pulse_out";
     private static final String KEY_DOZE_BRIGHTNESS_LEVEL = "doze_brightness_level";
+    private static final String KEY_DOZE_OVERWRITE = "doze_overwrite_value";
 
     private static final String SYSTEMUI_METADATA_NAME = "com.android.systemui";
 
+    private SwitchPreference mDozeOverwrite;
     private SwitchPreference mDozePreference;
     private ListPreference mDozePulseIn;
     private ListPreference mDozePulseVisible;
@@ -59,6 +61,11 @@ public class AmbientSettings extends SettingsPreferenceFragment
         ContentResolver resolver = getActivity().getContentResolver();
 
         addPreferencesFromResource(R.xml.ambient_settings);
+
+        mDozeOverwrite = (SwitchPreference) findPreference(KEY_DOZE_OVERWRITE);
+        mDozeOverwrite.setChecked((Settings.System.getInt(resolver,
+                Settings.System.DOZE_OVERWRITE_VALUE, 0) == 1));
+        mDozeOverwrite.setOnPreferenceChangeListener(this);
 
         mDozePreference = (SwitchPreference) findPreference(KEY_DOZE);
         mDozePreference.setOnPreferenceChangeListener(this);
@@ -161,6 +168,10 @@ public class AmbientSettings extends SettingsPreferenceFragment
             mDozePulseOut.setSummary(mDozePulseOut.getEntries()[index]);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.DOZE_PULSE_DURATION_OUT, dozePulseOut);
+        } else if (preference == mDozeOverwrite) {
+          boolean value = (Boolean) objValue;
+          Settings.System.putInt(getContentResolver(),
+                  Settings.System.DOZE_OVERWRITE_VALUE, value ? 1: 0);
         }
         return true;
     }

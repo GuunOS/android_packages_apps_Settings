@@ -63,12 +63,12 @@ public class DisplayFragment extends SettingsPreferenceFragment implements
 
         mThreeFingerGesture = (SwitchPreference) findPreference(THREE_FINGER_GESTURE);
         mThreeFingerGesture.setChecked((Settings.System.getInt(resolver,
-                Settings.System.THREE_FINGER_GESTURE, 1) == 1));
+                Settings.System.THREE_FINGER_GESTURE, 0) == 1));
         mThreeFingerGesture.setOnPreferenceChangeListener(this);
 
         mSensorBlock = (SwitchPreference) findPreference(SENSOR_BLOCK);
         mSensorBlock.setChecked((Settings.System.getInt(resolver,
-                Settings.System.SENSOR_BLOCK, 1) == 1));
+                Settings.System.SENSOR_BLOCK, 0) == 1));
         mSensorBlock.setOnPreferenceChangeListener(this);
 
         mSystemDefaultAnimation = (SwitchPreference) findPreference(SYSTEM_DEFAULT_ANIMATION);

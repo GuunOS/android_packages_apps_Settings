@@ -10,7 +10,7 @@
         android:summary="@string/doze_summary"
         android:persistent="false" />
 
-    <com.android.settings.preference.SystemSettingSwitchPreference
+    <SwitchPreference
         android:key="doze_overwrite_value"
         android:title="@string/doze_overwrite_value_title"
         android:summary="@string/doze_overwrite_value_summary"
