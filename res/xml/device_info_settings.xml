@@ -23,14 +23,14 @@
                           android:enabled="false"
                           android:layout="@layout/xenonhd_logo_row" />
 
-        <!-- XenonOTA -->
+        <!-- XenonOTA 
         <PreferenceScreen android:key="xenonota"
                 android:title="@string/xenonota_title"
                 android:summary="@string/xenonota_summary">
             <intent android:action="android.intent.action.MAIN"
                     android:targetPackage="com.xenonota"
                     android:targetClass="com.xenonota.MainActivity" />
-        </PreferenceScreen>
+        </PreferenceScreen> -->
 
         <!-- Changelog -->
         <PreferenceScreen android:key="changelog_xenonhd"
