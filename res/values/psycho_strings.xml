@@ -42,7 +42,7 @@
     <string name="root_appops_title">Manage root accesses</string>
     <string name="root_appops_summary">View and control the root rules</string>
 
-    <string name="psycho_version">Psycho OS Version</string>
+    <string name="psycho_version">Guun OS Version</string>
     <string name="psycho_info_default">0.35 beta</string>
 
     <!-- About phone screen, Device model -->
@@ -538,10 +538,10 @@
     <string name="substratum_title">Substratum</string>
     <string name="substratum_summary">Theme Management</string>
 
-    <string name="Psycho_activity_title">Psycho Tweaks</string>
+    <string name="Psycho_activity_title">Guun Tweaks</string>
     <string name="Psycho_header">ROM Extras</string>
     <string name="Psycho_tweaks_title">Categories</string>
-    <string name="psycho_summary">Go Psycho!</string>
+    <string name="psycho_summary">Go Guun!</string>
 
     <string name="system_category">System</string>
     <string name="buttons_category">Buttons</string>
@@ -553,9 +553,9 @@
     <string name="lockscreen_category">Lockscreen</string>
     <string name="lights_category">Lights</string>
     <string name="buttons_nav">Navigation Bar</string>
-    <string name="mod_version">Psycho OS</string>
-    <string name="mod_version_default">Go Psycho!</string>
-    <string name="app_name">Psycho Tweaks</string>
+    <string name="mod_version">Guun OS</string>
+    <string name="mod_version_default">Go Guun!</string>
+    <string name="app_name">Guun Tweaks</string>
     <string name="theme">UI Theme</string>
     <string name="display">Display</string>
     <string name="buttons">Buttons</string>
@@ -564,11 +564,11 @@
     <string name="theme_black">Black Theme</string>
     <string name="theme_dark">Dark Theme</string>
     <string name="theme_stock">Stock Theme</string>
-    <string name="theme_psycho">Psycho Theme</string>
+    <string name="theme_psycho">Guun Theme</string>
     <string name="theme_black_desc">For Your AMOLED Screens</string>
     <string name="theme_dark_desc">For Dark UI Lovers</string>
     <string name="theme_stock_desc">Suitable for use with Substratum Themes</string>
-    <string name="theme_psycho_desc">The Default Psycho Theme</string>
+    <string name="theme_psycho_desc">The Default Guun Theme</string>
     <string name="headi">Accent Colour</string>
     <string name="Teal">Teal</string>
     <string name="Blue">Blue</string>
@@ -581,8 +581,8 @@
     <string name="Cyan">Cyan</string>
     <string name="Grey">Grey</string>
 
-    <!-- Psycho OTA -->
-    <string name="psy_ota_title">Psycho OS OTA</string>
+    <!-- Guun OTA -->
+    <string name="psy_ota_title">Guun OS OTA</string>
     <string name="psy_ota_summary">System Updates</string>
 
     <!-- Pocket judge -->
@@ -609,11 +609,11 @@
     <string name="qs_easy_toggle_title">Advanced Quick Setting easy toggle</string>
     <string name="qs_easy_toggle_summary">One tap action to toggle bluetooth, data, or wifi</string>
 
-    <!-- Psycho Suggestions -->
+    <!-- Guun Suggestions -->
     <string name="psy_suggest_title">Suggestions</string>
     <string name="psy_suggest_summary">Send us your feedback here</string>
 
-    <string name="psyc_os">Psycho OS</string>
+    <string name="psyc_os">Guun OS</string>
 
     <!-- Doze pulse options -->
     <string name="doze_settings">Doze settings</string>
